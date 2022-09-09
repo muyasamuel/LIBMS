@@ -30,6 +30,9 @@
    border: none;
    border-bottom: 1px solid #a7bcff;
 }
+.addWrapper form select{
+    padding: 10px;
+ }
 
 .addWrapper form button{ 
     background-color: #a7bcff;
