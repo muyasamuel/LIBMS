@@ -1,11 +1,12 @@
 
 import './App.css';
+import AddBook from './components/AddBook';
 
 
 function App() {
   return (
     <div className="App">
-      <h1> Sammy muya</h1>
+      <AddBook />
     
     </div>
   );

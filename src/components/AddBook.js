@@ -1,8 +1,8 @@
-import React from 'react'
+import './AddBook.css'
 
 const AddBook = () => {
   return (
-    <div>
+    <div className='addContainer'>
         <h2>Add New Book</h2>
         <form>
             <input type='text'  placeholder='Book title '/>
