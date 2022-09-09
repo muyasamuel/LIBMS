@@ -6,3 +6,40 @@
     justify-content: center;
 }
 
+.addWrapper{
+    background-color: #fff;
+    padding: 20px 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+.addWrapper h2{
+    text-align: center;
+   
+}
+.addWrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+   
+}
+
+.addWrapper form input{
+   width: 300px;
+   padding: 10px;
+   border: none;
+   border-bottom: 1px solid #a7bcff;
+}
+
+.addWrapper form button{ 
+    background-color: #a7bcff;
+    color: black;
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 0;
+}
