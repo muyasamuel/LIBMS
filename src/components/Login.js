@@ -2,11 +2,12 @@ import './Login.css'
 
 const Login = () => {
   return (
-    <div className='container'> 
-     <div className='wrapper'>
-        <form className='form'>
-        <input  placeholder='Enter name' />
-        <input  placeholder='Password' />
+    <div className='formContainer'> 
+     <div className='formWrapper'>
+        <h1>Login</h1>
+        <form >
+        <input  type='text' placeholder='Enter name' />
+        <input  type='password' placeholder='Password' />
         <button>Login</button>
         </form>
         
