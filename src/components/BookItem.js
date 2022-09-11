@@ -7,7 +7,7 @@ function BookItem(  {  title, author, amount, category} ) {
     <div className='itemWrapper'>
         <h2> {title} </h2>
         <h3> {author} </h3>
-        <p>Amount :<span> {amount}</span></p>
+        <p >Amount :<span> {amount}</span></p>
         <p>{category}</p>
          
     </div>

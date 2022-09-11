@@ -8,50 +8,50 @@
     },
     {
         id: 2,
-        title: 'River and Source',
-        author: 'Margaret Ogola',
+        title: 'Encyclopedia',
+        author: 'John Kdere',
         amount: 5,
         category: 'revision book'
     },
     {
         id: 3,
-        title: 'River and Source',
-        author: 'Margaret Ogola',
+        title: 'Secondary English',
+        author: 'Kanini Kega',
         amount: 5,
         category: 'course work'
     },
     {
         id: 4,
-        title: 'River and Source',
+        title: 'Kidagaa',
         author: 'Margaret Ogola',
         amount: 5,
         category: 'novel'
     },
     {
         id: 5,
-        title: 'River and Source',
-        author: 'Margaret Ogola',
+        title: 'Solving Problems',
+        author: 'Maina Njenga',
         amount: 5,
         category: 'revision book'
     },
     {
         id: 6,
-        title: 'River and Source',
-        author: 'Margaret Ogola',
+        title: 'Our lives today',
+        author: 'Eduardo Mendy',
         amount: 5,
         category: 'course work'
     },
     {
         id: 7,
-        title: 'River and Source',
+        title: 'Caucasian chalk circle',
         author: 'Margaret Ogola',
         amount: 5,
         category: 'novel'
     },
     {
         id: 8,
-        title: 'River and Source',
-        author: 'Margaret Ogola',
+        title: 'Made familiar Mathematics',
+        author: 'C.Muturi',
         amount: 5,
         category: 'revision book'
     }
