@@ -4,55 +4,55 @@
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Novel'
+        category: 'novel'
     },
     {
         id: 2,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Revision book'
+        category: 'revision book'
     },
     {
         id: 3,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Course Work'
+        category: 'course work'
     },
     {
         id: 4,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Novel'
+        category: 'novel'
     },
     {
         id: 5,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Revision book'
+        category: 'revision book'
     },
     {
         id: 6,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Course Work'
+        category: 'course work'
     },
     {
         id: 7,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Novel'
+        category: 'novel'
     },
     {
         id: 8,
         title: 'River and Source',
         author: 'Margaret Ogola',
         amount: 5,
-        category: 'Revision book'
+        category: 'revision book'
     }
 ]
