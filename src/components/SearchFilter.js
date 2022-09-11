@@ -11,7 +11,7 @@ function SearchFilter() {
             
             <div className='content'> 
             {booksAvailable.map((item) => {
-                return  <BookItem />
+                return  <BookItem key={item.id} {...item} />
             })}
      
             
