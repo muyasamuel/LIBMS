@@ -1,4 +1,6 @@
-import './SearchFilter.css'
+import './SearchFilter.css';
+import BookItem from './BookItem';
+import { booksAvailable } from './Data'
 
 function SearchFilter() {
   return (
@@ -7,7 +9,13 @@ function SearchFilter() {
         <div className='wrapper'>
             <div className='inputDiv'> <input type='text'  placeholder='search..'/></div>
             
-            <div className='content'> books content</div>
+            <div className='content'> 
+            {booksAvailable.map((item) => {
+                return  <BookItem />
+            })}
+     
+            
+            </div>
         </div>
         
 
