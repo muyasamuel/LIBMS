@@ -43,11 +43,12 @@ const AddBook = () => {
       <div className="addWrapper">
         <h2>Add New Book</h2>
         <form onSubmit={submitHandler}>
-          {amountInvalid && <p className="error">Please fill in a proper amount</p>}
+          
           {namesInvalid && <p className="error">Please fill in names</p>}
           <input type="text" placeholder="Book title "  value={title} onChange={(e)=> setTitle(e.target.value)} />
           <input type="text" placeholder="Authors Name " value={author} onChange={(e)=> setAuthor(e.target.value)}  />
           <input type="number" placeholder="Amount " value={amount} onChange={(e)=> setAmount(e.target.value)}  />
+          {amountInvalid && <p className="error">Please fill in a proper amount</p>}
           <label htmlFor="category ">Select category:</label>
           <select name="books" id="books" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="Novel">Novel</option>
