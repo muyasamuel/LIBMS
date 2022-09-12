@@ -14,7 +14,8 @@ function SearchFilter() {
         const filteredData = booksAvailable.filter((item) => {
             return Object.values(item.category).join('').toLowerCase().includes(searchInput.toLowerCase())
         })
-        setFilteredResults(filteredData)
+        setFilteredResults(filteredData);
+        console.log('rendered')
     }
     else{
         setFilteredResults(booksAvailable)
@@ -33,7 +34,7 @@ function SearchFilter() {
             <div className='inputDiv'> <input type='text'  placeholder='search..'  onChange={(e) => searchItems(e.target.value)}/></div>
             
             <div className='content'> 
-            {searchInput.length > 1 ? (
+            {searchInput.length > 0 ? (
                     filteredResults.map((item) => {
                         return (
                             <BookItem  key={item.id} {...item}/>

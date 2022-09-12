@@ -54,5 +54,34 @@
         author: 'C.Muturi',
         amount: 5,
         category: 'revision book'
+    },
+    {
+        id: 9,
+        title: 'Solving Problems',
+        author: 'Maina Njenga',
+        amount: 5,
+        category: 'revision book'
+    },
+    {
+        id: 10,
+        title: 'Our lives today',
+        author: 'Eduardo Mendy',
+        amount: 5,
+        category: 'course work'
+    },
+    {
+        id: 11,
+        title: 'Caucasian chalk circle',
+        author: 'Margaret Ogola',
+        amount: 5,
+        category: 'novel'
+    },
+    {
+        id: 12,
+        title: 'Made familiar Mathematics',
+        author: 'C.Muturi',
+        amount: 5,
+        category: 'revision book'
     }
+    
 ]
