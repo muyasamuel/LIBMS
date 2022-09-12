@@ -3,21 +3,40 @@ import "./IssueBook.css";
 function IssueBook() {
   return (
     <div className="issueContainer">
-      {/* <h1>Issue Book</h1> */}
+        <div>
+            <h1>Issue Book</h1>
+            <h3>Note: Only one book is issued at a GO !!!</h3>
       <div className="issueWrapper">
         <form>
-        <input type="text" name="name"  placeholder="Students Name"/>
+            <label>Students Name : 
+                <input type="text" name="name"  placeholder="Students Name"/>
+            </label>
+            <label>Students Email : 
+                <input type="email" name="email" placeholder="Students Email" />
+            </label>
+            <label>Book Title :
+                <input type="text" name="title" placeholder="Book Title" />
+            </label>
+            <label>Issued Date :
+                <input type="date" name="issued date" />
+            </label>
+            <label>Return Date :
+                <input type="date" name="return date"  />
+            </label>
+        
 
-        <input type="email" name="email" placeholder="Students Email" />
+        
 
-        <input type="text" name="title" placeholder="Book Title" />
+        
 
-        <input type="date" name="issued date" />
+        
 
-        <input type="date" name="return date"  />
+        
 
         <button>Submit </button>
       </form>
+        </div>
+      
       </div>
       
     </div>

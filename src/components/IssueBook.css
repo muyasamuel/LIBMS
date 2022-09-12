@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
 }
+.issueContainer h1,h3{
+    text-align: center;
+}
+
 .issueWrapper{
     background-color: #fff;
     padding: 40px 80px;
@@ -22,6 +26,15 @@
 
    
 }
+.issueWrapper label{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    width: 400px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -31,6 +44,8 @@
    border: none;
    border-bottom: 1px solid #a7bcff;
    background: none;
+   flex:  200px;
+   margin-left: 10px;
 
    
 }
