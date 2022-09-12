@@ -19,7 +19,8 @@ function IssueBook() {
         <h3>Note: Only one book is issued at a GO !!!</h3>
         <div className="issueWrapper">
           <form onSubmit={handleSubmit(submitHandler)}>
-            <label>
+            <div>
+              <label>
               Students Name :
               <input
                 type="text"
@@ -27,9 +28,12 @@ function IssueBook() {
                 placeholder="Students Name"
                 {...register("name", { required: true, maxLength: 7 })}
               />
-              {errors.name && <p> Please check on the inputed name</p>}
+              
             </label>
-            <label>
+            {errors.name && <p style={{color: 'red'}}> Please check on the inputed name</p>}
+            </div>
+            <div>
+              <label>
               Students Email :
               <input
                 type="email"
@@ -41,9 +45,12 @@ function IssueBook() {
                 })}
               
               />
-              {errors.email && <p>Please put n a valid email</p>}
+            
             </label>
-            <label>
+            {errors.email && <p style={{color: 'red'}}>Please put n a valid email</p>}
+            </div>
+            <div>
+               <label>
               Book Title :
               <input
                 type="text"
@@ -52,19 +59,28 @@ function IssueBook() {
                 {...register("title", { required: true })}
                
               />
-              {errors.title && <p> Please fill in the book title</p>}
+              
             </label>
-            <label>
+            {errors.title && <p style={{color: 'red'}}> Please fill in the book title</p>}
+            </div>
+           <div>
+             <label>
               Issued Date :
               <input type="date" name="issued date" {...register("issuedDate" , { required: true})} />
-              {errors.issuedDate && <p> Please put in a date</p>}
+             
             </label>
-            <label>
+            {errors.issuedDate && <p style={{color: 'red'}}> Please put in a date</p>}
+           </div>
+           <div>
+             <label>
               Return Date :
               <input type="date" name="return date" {...register("returnDate" , {required: true})} />
-              {errors.issuedDate && <p> Please put in a date</p>}
+              
             </label>
+            {errors.issuedDate && <p style={{color: 'red'}}> Please put in a date</p>}
 
+           </div>
+           
             <button>Submit </button>
           </form>
         </div>
