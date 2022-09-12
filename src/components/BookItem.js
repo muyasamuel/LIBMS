@@ -9,6 +9,10 @@ function BookItem(  {  title, author, amount, category} ) {
         <h3> {author} </h3>
         <p >Amount :<span> {amount}</span></p>
         <p>{category}</p>
+        <div>
+            <button>EDIT</button>
+            <button>DELETE</button>
+        </div>
          
     </div>
   )
