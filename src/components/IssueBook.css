@@ -1,0 +1,55 @@
+.issueContainer{
+    height: 100vh;
+    background-color: #a7bcff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.issueWrapper{
+    background-color: #fff;
+    padding: 40px 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+
+}
+.issueWrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+   
+
+   
+}
+
+
+
+.issueWrapper input{
+   width: 350px;
+   outline: none;
+   border: none;
+   border-bottom: 1px solid #a7bcff;
+   background: none;
+
+   
+}
+
+.issueWrapper button{
+    padding: 10px;
+    background-color:none;
+    color: black;
+    font-weight: lighter;
+    font-size: 15px;
+    text-transform: uppercase;
+     margin: 20px 0;
+    
+}
+
+.issueWrapper button:hover{
+    
+    background-color: #a7bcff ;
+    outline: none;
+    
+    
+}

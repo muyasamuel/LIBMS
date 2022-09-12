@@ -1,36 +1,25 @@
-import React from "react";
+import "./IssueBook.css";
 
 function IssueBook() {
   return (
-    <div>
-      <h1>Issue Book</h1>
-      <h3> Only one book is issued at a Go</h3>
-      <form>
-        <label>
-          Students Name:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Students Email:
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Book Title:
-          <input type="text" name="title" />
-        </label>
+    <div className="issueContainer">
+      {/* <h1>Issue Book</h1> */}
+      <div className="issueWrapper">
+        <form>
+        <input type="text" name="name"  placeholder="Students Name"/>
 
-        <label>
-          Issued Date:
-          <input type="date" name="issued date" />
-        </label>
-        <label>
-          Return Date:
-          <input type="date" name="return date" />
-        </label>
-        <button> Submit </button>
-       
-       
+        <input type="email" name="email" placeholder="Students Email" />
+
+        <input type="text" name="title" placeholder="Book Title" />
+
+        <input type="date" name="issued date" />
+
+        <input type="date" name="return date"  />
+
+        <button>Submit </button>
       </form>
+      </div>
+      
     </div>
   );
 }
