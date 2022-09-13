@@ -2,6 +2,7 @@ import './SearchFilter.css';
 import BookItem from './BookItem';
 import { booksAvailable } from './Data'
 import { useState } from 'react';
+import EditBookItem from './EditBookItem';
 
 
 function SearchFilter() {
@@ -31,6 +32,7 @@ function SearchFilter() {
     <div className='searchContainer'>
        
         <div className='wrapper'>
+            <EditBookItem />
             <div className='inputDiv'> <input type='text'  placeholder='search..'  onChange={(e) => searchItems(e.target.value)}/></div>
             
             <div className='content'> 

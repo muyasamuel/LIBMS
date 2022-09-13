@@ -4,12 +4,14 @@
     background-color: #a7bcff ;
     display: flex;
     justify-content: center;
+    overflow: hidden;
  
     
 }
 
 .wrapper{
     margin-top: 50px;
+    position: relative;
     
  
 }
