@@ -1,0 +1,25 @@
+.issuedBookWrapper{
+    background: brown;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin: 8px auto;
+}
+.issuedBookWrapper h2{
+    flex: 1;
+}
+
+.issuedBookWrapper h3{
+    flex: 1;
+}
+
+
+.issuedBookWrapper p{
+    flex: 1;
+}
+
+.issuedBookWrapper span{
+    flex: 1;
+}
