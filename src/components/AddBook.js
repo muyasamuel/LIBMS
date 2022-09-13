@@ -1,61 +1,49 @@
 import "./AddBook.css";
-import { useState } from 'react';
+import { useForm } from "react-hook-form";
 
 const AddBook = () => {
-   const [title , setTitle ] = useState('');
-   const [author , setAuthor ] = useState('')
-   const [amount , setAmount ] = useState(0);
-   const [category , setCategory ] = useState('');
-
-   const [amountInvalid , setAmountInvalid] = useState(false);
-   const [namesInvalid, setNamesInvalid] = useState(false);
+   const { register, handleSubmit , formState : { errors}, reset} = useForm()
+   
 
 
-   const submitHandler = (e) =>{
-    e.preventDefault();
+   const submitHandler = (data) =>{
+    console.log(data);
+
+    reset();
  
-    if(amount < 1){
-      setAmountInvalid(true);
-       
-    }else if(title.trim() === "" || author.trim() === ""   ){
-      setNamesInvalid(true);
-    }else{
-      const newEntry = {
-        title,
-        author,
-        amount,
-        category
-      }
-      console.log(newEntry);
-
-    }
-
-  
-    setTitle("");
-    setAuthor("");
-    setAmount("");
-    setCategory("");
-    
-   }
-
+   };
   return (
     <div className="addContainer">
       <div className="addWrapper">
         <h2>Add New Book</h2>
-        <form onSubmit={submitHandler}>
+        <form onSubmit={handleSubmit(submitHandler)}>
+         <div>
+          <input type="text" name="title" placeholder="Book title " {...register("title" , {required: true})} />
+          {errors.title && <p> Please input a title</p>}
+         </div>
+          <div>
+             <input type="text" name="author" placeholder="Authors Name " {...register("author", {required: true})}/>
+             {errors.author && <p> Please add an Authors Name</p> }
+          </div>
+         <div>
+          <input type="number" name="amount" placeholder="Amount " {...register("amount", {required: true, max: 15, min: 1})}  />
+          {errors.amount && <p>Please a valid amount </p>}
+         </div>
           
-          {namesInvalid && <p className="error">Please fill in names</p>}
-          <input type="text" placeholder="Book title "  value={title} onChange={(e)=> setTitle(e.target.value)} />
-          <input type="text" placeholder="Authors Name " value={author} onChange={(e)=> setAuthor(e.target.value)}  />
-          <input type="number" placeholder="Amount " value={amount} onChange={(e)=> setAmount(e.target.value)}  />
-          {amountInvalid && <p className="error">Please fill in a proper amount</p>}
+       
+
           <label htmlFor="category ">Select category:</label>
-          <select name="books" id="books" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select name="category" id="books" value='' {...register("category", {required: true})} >
+            <option value="" disabled >Choose here</option>
             <option value="Novel">Novel</option>
             <option value="Revision book">Revision Book</option>
             <option value="Course Work">Course Work</option>
         
           </select>
+          {errors.category && <p>Please feed in a category </p>}
+
+        
+
           <button>Submit</button>
         </form>
       </div>
