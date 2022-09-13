@@ -90,30 +90,30 @@
 
 export const issuedBooks = [
     {
-        id: 1,
+        id: 'b1',
         studentsName: 'Muya',
         studentsEmail: 'iamsamuel6535@gmail.com',
         title: 'kidagaa',
-        issuedDate: '2022-09-05',
-        returnDate: '2022-09-15'
+        issuedDate: '2022-09-10',
+        returnDate: '2022-09-18'
 
     },
     {
-        id: 2,
+        id: 'b2',
         studentsName: 'Njomo',
         studentsEmail: 'njomo@gmail.com',
         title: 'kidagaa',
-        issuedDate: '2022-09-08',
-        returnDate: '2022-09-16'
+        issuedDate: '2022-09-11',
+        returnDate: '2022-09-19'
 
     },
     {
-        id: 1,
+        id: 'b3',
         studentsName: 'cherish',
         studentsEmail: 'cherishmugure@gmail.com',
         title: 'River and the source',
-        issuedDate: '2022-09-06',
-        returnDate: '2022-09-17'
+        issuedDate: '2022-09-12',
+        returnDate: '2022-09-20'
 
     }
 ]

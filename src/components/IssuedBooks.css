@@ -11,6 +11,11 @@
     
 }
 
+.issuedBooksWrapper .heading{
+   text-align: center;
+    
+}
+
 .inputDiv{
     display: flex;
     justify-content: center;
