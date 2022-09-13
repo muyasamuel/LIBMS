@@ -84,4 +84,36 @@
         category: 'revision book'
     }
     
+];
+
+
+
+export const issuedBooks = [
+    {
+        id: 1,
+        studentsName: 'Muya',
+        studentsEmail: 'iamsamuel6535@gmail.com',
+        title: 'kidagaa',
+        issueDate: '2022-09-05',
+        returnDate: '2022-09-15'
+
+    },
+    {
+        id: 2,
+        studentsName: 'Njomo',
+        studentsEmail: 'njomo@gmail.com',
+        title: 'kidagaa',
+        issueDate: '2022-09-08',
+        returnDate: '2022-09-16'
+
+    },
+    {
+        id: 1,
+        studentsName: 'cherish',
+        studentsEmail: 'cherishmugure@gmail.com',
+        title: 'River and the source',
+        issueDate: '2022-09-06',
+        returnDate: '2022-09-17'
+
+    }
 ]
