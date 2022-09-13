@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const editContext = createContext();
+const EditContext = createContext();
 
 const EditProvider = ({children}) => {
    const [ editCartSeen, setEditCartSeen] =  useState(false);
@@ -15,15 +15,15 @@ const EditProvider = ({children}) => {
 
 
     return (
-        <editContext.Provider value={{
+        <EditContext.Provider value={{
             editCartSeen,
             showEditCart,
             removeEditCart
 
         }}>
             {children}
-        </editContext.Provider>
+        </EditContext.Provider>
     )
 };
 
-export { editContext, EditProvider}
+export { EditContext, EditProvider}

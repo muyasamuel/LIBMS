@@ -1,6 +1,6 @@
 import './BookItem.css'
 
-function BookItem(  {  title, author, amount, category} ) {
+function BookItem(  {  title, author, amount, category , onShow} ) {
    
 
   return (
@@ -10,7 +10,7 @@ function BookItem(  {  title, author, amount, category} ) {
         <p >Amount :<span> {amount}</span></p>
         <p>{category}</p>
         <div>
-            <button>EDIT</button>
+            <button onClick={() => onShow()}>EDIT</button>
             <button>DELETE</button>
         </div>
          
