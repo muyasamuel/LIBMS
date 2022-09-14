@@ -1,8 +1,8 @@
 
 import './App.css';
+import IssuedBooks from './components/IssuedBooks';
 
 
-import SearchFilter from './components/SearchFilter';
 
 
 
@@ -16,8 +16,9 @@ import SearchFilter from './components/SearchFilter';
 function App() {
   return ( 
     <div className="App">
+      <IssuedBooks />
       
-    <SearchFilter />
+   
    
      
      

@@ -10,3 +10,17 @@
     opacity: 0.7;
     text-align: center;
 }
+
+.editBookWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editBookContainer button{
+    margin-right: 5px;
+    margin-top: 12px;
+    padding: 7px 16px;
+    border-radius: 6px;
+
+}

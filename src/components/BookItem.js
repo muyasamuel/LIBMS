@@ -18,4 +18,4 @@ function BookItem(  {  title, author, amount, category , onShow} ) {
   )
 }
 
-export default BookItem
+export default BookItem;

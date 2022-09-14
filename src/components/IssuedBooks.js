@@ -10,12 +10,16 @@ function IssuedBooks() {
 
  const searchDate = (date) => {
    setInput(date);
-   console.log(date)
+   
  
    if(input !== "" ){
+  
      const filteredDates = issuedBooks.filter((item) => {
-    return Object.values(item.returnDate).includes(input);
-   })
+    return Object.values(item.returnDate).join('').toLowerCase().includes(input);
+   
+   });
+ 
+  
    setFilteredResults(filteredDates);
    }else{
     setFilteredResults(issuedBooks);
@@ -27,7 +31,7 @@ function IssuedBooks() {
     <div className='booksContainer'>
         <div className='issuedBooksWrapper'>
         <div className='heading'><h2> Filter to latest Return Date</h2></div> 
-        <div className='inputDiv'> <input type='date' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
+        <div className='inputDiv'> <input type='text' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
         <div className='issuedBookList'>
         {input !== "" ? (
                     filteredResults.map((item) => {
