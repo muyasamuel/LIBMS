@@ -1,6 +1,7 @@
 
 import './App.css';
-import IssuedBooks from './components/IssuedBooks';
+import Home from './components/Home'
+
 
 
 
@@ -16,7 +17,8 @@ import IssuedBooks from './components/IssuedBooks';
 function App() {
   return ( 
     <div className="App">
-      <IssuedBooks />
+      <Home />
+     
       
    
    
