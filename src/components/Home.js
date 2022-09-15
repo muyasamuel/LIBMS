@@ -1,4 +1,5 @@
-import './Home.css'
+import './Home.css';
+
 
 function Home() {
   return (
@@ -13,10 +14,11 @@ function Home() {
         </nav>
 
         <main>
+         
           <h1>Automate <br></br>Your <span>library</span>  <br></br>to Fully Digital one...</h1>
           <div className='btnDiv'>
             <button className='mainBtn'> Sign Up</button>
-            <button className='mainBtn' >Login</button>
+            <button className='mainBtn active' >Login</button>
           </div>
          
 
