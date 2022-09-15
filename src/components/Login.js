@@ -27,7 +27,7 @@ const Login = () => {
           {errors.password && <p style={{color: 'red'}}> Please fill in a correct password </p>}
         </div>
         
-        <button>Login</button>
+        <button>Log in</button>
         </form>
         
      </div>
