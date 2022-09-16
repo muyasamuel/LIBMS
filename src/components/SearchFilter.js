@@ -8,14 +8,19 @@ import { EditContext } from '../store/editContext'
 
 
 function SearchFilter() {
-    const {  editCartSeen, removeEditCart,  showEditCart} = useContext(EditContext);
+    const { state } = useContext(EditContext);
+    
+    const { editCartSeen } = state;
+
+  
 
 
   const [searchInput, setSearchInput] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
 
   const searchItems = (searchValue) => {
-    setSearchInput(searchValue)
+    setSearchInput(searchValue);
+    console.log(state);
     if (searchInput !== '') {
         const filteredData = booksAvailable.filter((item) => {
             return Object.values(item.category).join('').toLowerCase().includes(searchInput.toLowerCase())
@@ -37,20 +42,20 @@ function SearchFilter() {
     <div className='searchContainer'>
        
         <div className='wrapper'>
-             {editCartSeen && <EditBookItem onRemoveCart={removeEditCart} />} 
+             {editCartSeen && <EditBookItem   />} 
             <div className='inputDiv'> <input type='text'  placeholder='search..'  onChange={(e) => searchItems(e.target.value)}/></div>
             
             <div className='content'> 
             {searchInput.length > 0 ? (
                     filteredResults.map((item) => {
                         return (
-                            <BookItem  key={item.id} {...item} onShow={showEditCart}/>
+                            <BookItem  key={item.id} {...item}  />
                         )
                     })
                 ) : (
                     booksAvailable.map((item) => {
                         return (
-                           <BookItem  key={item.id} {...item} onShow={showEditCart} />
+                           <BookItem  key={item.id} {...item}  />
                         )
                     })
                 )
