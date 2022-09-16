@@ -16,7 +16,7 @@ function BookItem({  title, author, amount, category }  ) {
         <p>{category}</p>
       
         <div>
-            <button onClick={() => dispatch({type: 'EDIT'})} >EDIT</button>
+            <button onClick={() => dispatch({type: 'EDIT', payload: {  title, author, amount, category } })} >EDIT</button>
             <button >DELETE</button>
         </div>
          

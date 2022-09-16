@@ -2,6 +2,10 @@ export const EditReducer = (state, action) => {
     if(action.type === 'EDIT'){
       
         return {
+            author: action.payload.author,
+            category: action.payload.category,
+            title: action.payload.title,
+            amount: action.payload.amount,
             editCartSeen: true,
     
         }
@@ -9,6 +13,7 @@ export const EditReducer = (state, action) => {
     }
     if(action.type === 'REMOVE'){
         return {
+            ...state,
             editCartSeen: false,
         }
     }

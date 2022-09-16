@@ -20,7 +20,7 @@ function SearchFilter() {
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
-    console.log(state);
+   
     if (searchInput !== '') {
         const filteredData = booksAvailable.filter((item) => {
             return Object.values(item.category).join('').toLowerCase().includes(searchInput.toLowerCase())

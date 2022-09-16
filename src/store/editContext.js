@@ -5,10 +5,10 @@ const EditContext = createContext();
 
 const defaultState = {
     
-        title: 'Rio',
-        author: "kamikaze",
-        category: 'novel',
-        amount: 5,
+        title: '',
+        author: "",
+        category: '',
+        amount: 0,
         editCartSeen: false
 
     
