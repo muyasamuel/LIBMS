@@ -8,16 +8,20 @@ function EditBookItem() {
    const { title, author,  category } = state
   return (
     <div className="editBookContainer">
+       <header>Edit book item</header>
       <div className="editBookWrapper">
-        <h2>Edit book item</h2>
-        <h3>{title}</h3>
-        <h4> {author}</h4>
-        <h4>{category}</h4>
-
-        <input type="number" defaultValue='5' />
+       
+        <h3> TITLE : {title}</h3>
+        <h4> AUTHOR: {author}</h4>
+        <h4> CATEGORY: {category}</h4>
+        <div>
+          <h4>AMOUNT :</h4>
+          <input type="number" defaultValue='5' />
+        </div>
+        
       </div>
       <button >Submit</button>
-      <button onClick={() => dispatch({type: 'REMOVE'})}>Done</button>
+      <button id="doneBtn" onClick={() => dispatch({type: 'REMOVE'})}>Done</button>
     </div>
   );
 }
