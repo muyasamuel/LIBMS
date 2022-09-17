@@ -1,5 +1,6 @@
+
 .itemWrapper{
-    background: brown;
+    background: rgb(201, 61, 61);
     display: flex;
     align-items: center;
     gap: 45px;
@@ -10,13 +11,36 @@
 
 .itemWrapper h2{
     flex: 1;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .itemWrapper h3{
     flex: 1;
+    font-weight: lighter;
+    font-style: italic;
 }
 
 
 .itemWrapper p{
     flex: 1;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.itemWrapper button{
+    padding: 4px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 4px;
+    outline: none;
+    border: none;
+}
+
+#editBtn:hover{
+  background-color: var(--mainColor) ;
+}
+
+#delBtn:hover{
+    background-color: var(--danger);
 }

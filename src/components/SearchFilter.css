@@ -1,7 +1,9 @@
 .searchContainer{
     width: 100%;
     height: 100vh;
-    background-color: #a7bcff ;
+    background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -12,16 +14,17 @@
 .wrapper{
     margin-top: 50px;
     position: relative;
-    
+   
  
 }
-.inputDiv{
+.inputDiv, .editTitle{
     display: flex;
     justify-content: center;
+    color: #fff;
 }
 
 .wrapper input{
-   width: 300px;
+   width: 500px;
    outline: none;
    padding: 10px;
    border-radius: 7px;
@@ -30,9 +33,16 @@
 .content{
     background-color: aliceblue;
     width: 1200px;
-    height: 80vh;
+    height: 68vh;
     overflow: scroll;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 35px;
+    border-radius: 18px;
     margin-top: 15px;
+    scroll-behavior: smooth;
+
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+

@@ -43,7 +43,12 @@ function SearchFilter() {
        
         <div className='wrapper'>
              {editCartSeen && <EditBookItem   />} 
-            <div className='inputDiv'> <input type='text'  placeholder='search..'  onChange={(e) => searchItems(e.target.value)}/></div>
+             <h1 className='editTitle'> Search Issued Books and Edit... </h1>
+
+            <div className='inputDiv'> 
+            
+            <input type='text'  placeholder='Search by category..'  onChange={(e) => searchItems(e.target.value)}/>
+            </div>
             
             <div className='content'> 
             {searchInput.length > 0 ? (

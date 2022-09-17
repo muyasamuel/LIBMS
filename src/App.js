@@ -1,7 +1,6 @@
 
 import './App.css';
-import Login from './components/Login'
-
+import SearchFilter from './components/SearchFilter'
 
 
 
@@ -21,8 +20,7 @@ function App() {
     <div className="App">
     
      
-    <Login />
-   
+   <SearchFilter />
    
      
      
