@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { EditContext } from "../store/editContext";
 import "./EditBookItem.css";
+import Modal from "./Modal";
 
 function EditBookItem() {
    const { state, dispatch }  = useContext(EditContext);
 
    const { title, author,  category } = state
   return (
-    <div className="editBookContainer">
+    <Modal>
+      <div className="editBookContainer">
        <header>Edit book item</header>
       <div className="editBookWrapper">
        
@@ -23,6 +25,8 @@ function EditBookItem() {
       <button >Submit</button>
       <button id="doneBtn" onClick={() => dispatch({type: 'REMOVE'})}>Done</button>
     </div>
+    </Modal>
+    
   );
 }
 

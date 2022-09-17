@@ -1,0 +1,62 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0 , 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editBookContainer{
+    background-color: var(--secondary);
+    width: 550px;
+    height: 490px;
+    position: absolute;
+    top: 9%;
+    left: 29%;
+    z-index: 2;
+    border-radius: 10px;
+    text-align: center;
+    transition: all ease-in .4s;
+
+}
+.editBookContainer header{
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mainColor);
+    padding: 8px;
+}
+
+.editBookWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    margin: 10px 30px;
+    border-radius: 10px;
+    background-color: var(--white);
+}
+.editBookWrapper input{
+    width: 200px;
+}
+.editBookContainer button{
+    margin-right: 9px;
+    margin-top: 12px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+}
+
+#doneBtn{
+    background-color: var(--mainColor);
+}
+#doneBtn:hover{
+   transform: translate(1.05);
+}
