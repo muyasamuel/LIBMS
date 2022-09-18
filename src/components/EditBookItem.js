@@ -1,31 +1,39 @@
 import { useContext } from "react";
 import { EditContext } from "../store/editContext";
 import "./EditBookItem.css";
-import Modal from "./Modal";
+
+
 
 function EditBookItem() {
    const { state, dispatch }  = useContext(EditContext);
 
-   const { title, author,  category } = state
+   const { title, author,  category , amount} = state;
   return (
-    <Modal>
-      <div className="editBookContainer">
+    
+       <div className="editBookContainer">
        <header>Edit book item</header>
       <div className="editBookWrapper">
        
         <h3> TITLE : {title}</h3>
         <h4> AUTHOR: {author}</h4>
         <h4> CATEGORY: {category}</h4>
-        <div>
-          <h4>AMOUNT :</h4>
-          <input type="number" defaultValue='5' />
-        </div>
+        <h4> AMOUNT: {amount}</h4>
+        
+        <form>
+          <h4> CHANGE AMOUNT :</h4>
+          <input type="number" />
+          <button >Submit</button>
+        </form>
         
       </div>
-      <button >Submit</button>
+     
       <button id="doneBtn" onClick={() => dispatch({type: 'REMOVE'})}>Done</button>
     </div>
-    </Modal>
+    
+       
+    
+   
+      
     
   );
 }

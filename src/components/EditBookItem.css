@@ -1,13 +1,16 @@
+
+
 .editBookContainer{
     background-color: var(--secondary);
     width: 550px;
-    height: 490px;
+    height: auto;
     position: absolute;
     top: 9%;
     left: 29%;
     z-index: 2;
     border-radius: 10px;
     text-align: center;
+    padding: 15px;
     transition: all ease-in .4s;
 
 }
@@ -22,8 +25,8 @@
 .editBookWrapper{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 10px;
+    gap: 7px;
+    padding: 7px;
     margin: 10px 30px;
     border-radius: 10px;
     background-color: var(--white);
@@ -32,8 +35,7 @@
     width: 200px;
 }
 .editBookContainer button{
-    margin-right: 9px;
-    margin-top: 12px;
+  margin-left: 10px;
     padding: 7px 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -46,5 +48,5 @@
     background-color: var(--mainColor);
 }
 #doneBtn:hover{
-   transform: translate(1.05);
+   transform: translateX(1.5);
 }

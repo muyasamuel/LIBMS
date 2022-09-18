@@ -3,10 +3,10 @@ import './Modal.css';
 import { ReactDOM } from 'react';
 
 
-const ModalOverlay = ({children}) => {
+export const ModalOverlay = ({children}) => {
     return (
         <div className='modal'>
-         <div className='content'>{children}</div>
+         {children}
         </div>
 
     )};

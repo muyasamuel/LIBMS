@@ -29,7 +29,7 @@ function SearchFilter() {
         console.log('rendered')
     }
     else{
-        setFilteredResults(booksAvailable)
+        setFilteredResults(booksAvailable);
     }
 }
    
@@ -43,7 +43,7 @@ function SearchFilter() {
        
         <div className='wrapper'>
              {editCartSeen && <EditBookItem   />} 
-             <h1 className='editTitle'> Search Issued Books and Edit... </h1>
+             <h1 className='editTitle'> Search Available Books and Edit... </h1>
 
             <div className='inputDiv'> 
             
