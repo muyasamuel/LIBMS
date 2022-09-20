@@ -1,4 +1,9 @@
 import "./Form.css";
+import { BsFillPersonPlusFill } from "react-icons/bs";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { FaEnvelope } from "react-icons/fa";
+import frontImage from '../images/bg4.jpg';
+import backImage from '../images/bg5.jpg';
 
 
 function Form() {
@@ -8,11 +13,12 @@ function Form() {
       <input type="checkbox" id="flip" />
     <div class="cover">
       <div class="front">
-         <img src="../images/bg4.jpg" alt="" />
+         <img src={frontImage}  alt=""/>
+         
         
       </div>
       <div class="back">
-        <img class="backImg" src="../images/bg4.jpg" alt=""/>
+        <img class="backImg" src={backImage} alt=""/>
         
       </div>
     </div>
@@ -23,15 +29,15 @@ function Form() {
               <form action="#">
                 <div class="input-boxes">
                   <div class="input-box">
-                    <i class="fas fa-envelope"></i>
+                  <FaEnvelope style={{width: '25px', height: '25px'}} />
                     <input type="text" placeholder="Enter your email" />
                   </div>
                   <div class="input-box">
-                    <i class="fas fa-lock"></i>
+                  <RiLockPasswordLine style={{width: '30px', height: '30px'}} />
                     <input type="password" placeholder="Enter your password" />
                   </div>
                   <div class="text">
-                    <button>Forgot your Password</button>
+                    <a href="signup">forgot your password</a>
                   </div>
                   <div class="button input-box">
                     <input type="submit" value="Submit" />
@@ -47,15 +53,15 @@ function Form() {
               <form action="#">
                 <div class="input-boxes">
                   <div class="input-box">
-                    <i class="fas fa-user"></i>
+                  <BsFillPersonPlusFill style={{width: '30px', height: '30px'}} />
                     <input type="text" placeholder="Enter your name" />
                   </div>
                   <div class="input-box">
-                    <i class="fas fa-envelope"></i>
+                    <FaEnvelope  style={{width: '25px', height: '25px'}} />
                     <input type="text" placeholder="Enter your email" />
                   </div>
                   <div class="input-box">
-                    <i class="fas fa-lock"></i>
+                  <RiLockPasswordLine style={{width: '30px', height: '30px'}} />
                     <input type="password" placeholder="Enter your password" />
                   </div>
                   <div class="button input-box">
