@@ -5,6 +5,17 @@ function Form() {
   return (
     <div className="containerWrapper">
       <div className="container">
+      <input type="checkbox" id="flip" />
+    <div class="cover">
+      <div class="front">
+         <img src="../images/bg4.jpg" alt="" />
+        
+      </div>
+      <div class="back">
+        <img class="backImg" src="../images/bg4.jpg" alt=""/>
+        
+      </div>
+    </div>
         <div class="forms">
           <div class="form-content">
             <div class="login-form">
