@@ -1,4 +1,5 @@
 import "./Form.css";
+import { useForm } from "react-hook-form";
 import { BsFillPersonPlusFill } from "react-icons/bs";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaEnvelope } from "react-icons/fa";
@@ -7,6 +8,19 @@ import backImage from '../images/bg5.jpg';
 
 
 function Form() {
+    const { register, handleSubmit , formState : { errors}, reset} = useForm();
+    const { register: register2, formState: { errors: errors2 }, handleSubmit: handleSubmit2,   } =  useForm();
+
+
+   const loginHandler = (data) =>{
+    console.log(data);
+    reset();
+   }
+
+   const signUpHandler = (data) => {
+    console.log(data);
+    reset();
+   }
   return (
     <div className="containerWrapper">
       <div className="container">
@@ -26,15 +40,16 @@ function Form() {
           <div class="form-content">
             <div class="login-form">
               <div class="title">Login</div>
-              <form action="#">
+              <form action="#" onSubmit={handleSubmit(loginHandler)}>
                 <div class="input-boxes">
                   <div class="input-box">
                   <FaEnvelope style={{width: '25px', height: '25px'}} />
-                    <input type="text" placeholder="Enter your email" />
+                    <input type="text" placeholder="Enter your email"  />
                   </div>
                   <div class="input-box">
                   <RiLockPasswordLine style={{width: '30px', height: '30px'}} />
-                    <input type="password" placeholder="Enter your password" />
+                    <input type="password" placeholder="Enter your password"  name="password" {...register("password", {required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/ })} />
+                    {errors.password && <p style={{color: 'red'}}> Please fill in a correct password </p>}
                   </div>
                   <div class="text">
                     <a href="signup">forgot your password</a>
@@ -50,11 +65,13 @@ function Form() {
             </div>
             <div class="signup-form">
               <div class="title">Signup</div>
-              <form action="#">
+              <form action="#" onSubmit={handleSubmit2(signUpHandler)}>
                 <div class="input-boxes">
                   <div class="input-box">
-                  <BsFillPersonPlusFill style={{width: '30px', height: '30px'}} />
-                    <input type="text" placeholder="Enter your name" />
+                    <BsFillPersonPlusFill style={{width: '30px', height: '30px'}} />
+                    <input type="text" placeholder="Enter your name" name="name" {...register2("name" , {required: true , minLength: 5, maxLength: 12})}  />
+                    {errors2.name && <p style={{color: 'red'}}> Please fill in a name </p>}
+
                   </div>
                   <div class="input-box">
                     <FaEnvelope  style={{width: '25px', height: '25px'}} />
@@ -62,7 +79,8 @@ function Form() {
                   </div>
                   <div class="input-box">
                   <RiLockPasswordLine style={{width: '30px', height: '30px'}} />
-                    <input type="password" placeholder="Enter your password" />
+                    <input type="password" placeholder="Enter your password" name="signupPassword" {...register2("signupPassword", {required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/ })} />
+                    {errors2.signupPassword && <p style={{color: 'red'}}> Please fill in a correct  sign up password </p>}
                   </div>
                   <div class="button input-box">
                     <input type="submit" value="Submit" />
@@ -79,5 +97,6 @@ function Form() {
     </div>
   );
 }
+
 
 export default Form;

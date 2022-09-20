@@ -107,6 +107,7 @@
 }
 .forms .form-content .input-box{
   display: flex;
+
   align-items: center;
   height: 50px;
   width: 100%;
