@@ -1,6 +1,6 @@
 
 import './App.css';
-import SignUp from './components/SignUp';
+import Form from './components/Form';
 
 
 
@@ -20,8 +20,7 @@ function App() {
     <div className="App">
     
      
-  <SignUp />
-   
+    <Form />
      
      
     

@@ -6,9 +6,9 @@ function Home() {
     <div className='homeContainer'>
         <nav>
         <h1><span>LIB</span>MS</h1>
-        <div>
+        <div className='actions'>
         <button className='navBtn'> Sign Up</button>
-        <button  className='navBtn'>Login</button>
+        <button  className='navBtn '>Login</button>
         </div>
        
         </nav>
@@ -18,7 +18,7 @@ function Home() {
           <h1>Automate <br></br>Your <span>library</span>  <br></br>to Fully Digital one...</h1>
           <div className='btnDiv'>
             <button className='mainBtn'> Sign Up</button>
-            <button className='mainBtn active' >Login</button>
+            <button className='mainBtn ' >Login</button>
           </div>
          
 

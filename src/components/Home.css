@@ -1,13 +1,16 @@
 
 
 .homeContainer nav{
-    
     display: flex;
     justify-content: space-between ;
     padding: 2px 100px;
     align-items: center;
     background-color: black;
     color: aliceblue;
+}
+.actions{
+    display: flex;
+    justify-content: space-between;
 }
 .navBtn{
     background: transparent;
@@ -21,6 +24,11 @@
    
     
 }
+.navBtn:hover{
+    padding: 10px;
+    border: 1px solid var(--white);
+}
+
 
 
 .homeContainer nav span{
@@ -49,11 +57,11 @@
     letter-spacing: 5px;
     font-weight: bold;
     margin-right: 10px;
-    transition: ease-in .5s;
+    transition: ease-in .4s;
 }
-.mainBtn:active{
-    background-color: rgb(0, 255, 0);
-}
+
+
+
 
 .mainBtn:hover{
     background-color: rgb(31, 214, 31) ;
