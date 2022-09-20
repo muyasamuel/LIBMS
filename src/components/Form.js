@@ -1,5 +1,6 @@
 import "./Form.css";
 
+
 function Form() {
   return (
     <div className="containerWrapper">
@@ -22,7 +23,7 @@ function Form() {
                     <button>Forgot your Password</button>
                   </div>
                   <div class="button input-box">
-                    <input type="submit" value="Sumbit" />
+                    <input type="submit" value="Submit" />
                   </div>
                   <div class="text sign-up-text">
                     Don't have an account? <label for="flip">Sigup now</label>
@@ -47,7 +48,7 @@ function Form() {
                     <input type="password" placeholder="Enter your password" />
                   </div>
                   <div class="button input-box">
-                    <input type="submit" value="Sumbit" />
+                    <input type="submit" value="Submit" />
                   </div>
                   <div class="text sign-up-text">
                     Already have an account? <label for="flip">Login now</label>
