@@ -1,7 +1,9 @@
 .booksContainer{
     height: 100vh;
     width: 100%;
-    background-color: #a7bcff;
+    background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
 }
@@ -13,6 +15,9 @@
 
 .issuedBooksWrapper .heading{
    text-align: center;
+   color: aliceblue;
+   text-transform: uppercase;
+   font-weight: lighter;
     
 }
 
@@ -22,8 +27,9 @@
 }
 
 .issuedBooksWrapper input{
-    width: 300px;
+    width: 450px;
     outline: none;
+    border: none;
     padding: 10px;
     border-radius: 7px;
     margin: auto;
@@ -31,8 +37,13 @@
  .issuedBookList{
      background-color: aliceblue;
      width: 1200px;
-     height: 80vh;
-     padding: 20px;
-     border-radius: 10px;
+     height: 68vh;
+     overflow: scroll;
+     padding: 35px;
+     border-radius: 18px;
      margin-top: 15px;
+     scroll-behavior: smooth;
  }
+ ::-webkit-scrollbar {
+    display: none;
+}

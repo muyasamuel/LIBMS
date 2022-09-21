@@ -30,7 +30,7 @@ function IssuedBooks() {
   return (
     <div className='booksContainer'>
         <div className='issuedBooksWrapper'>
-        <div className='heading'><h2> Filter to latest Return Date</h2></div> 
+        <div className='heading'><h2> Filter to latest Return Date...</h2></div> 
         <div className='inputDiv'> <input type='text' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
         <div className='issuedBookList'>
         {input !== "" ? (
