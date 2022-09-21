@@ -33,7 +33,7 @@
 .content{
     background-color: aliceblue;
     width: 1200px;
-    height: 68vh;
+    height: 60vh;
     overflow: scroll;
     padding: 35px;
     border-radius: 18px;
@@ -41,6 +41,25 @@
     scroll-behavior: smooth;
 
 }
+
+.tableHeader{
+    
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+  
+    
+}
+.tableHeader p{
+    flex: 1;
+    margin-left: 10px;
+}
+
 
 ::-webkit-scrollbar {
     display: none;

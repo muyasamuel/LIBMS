@@ -32,6 +32,13 @@ function IssuedBooks() {
         <div className='issuedBooksWrapper'>
         <div className='heading'><h2> Filter to latest Return Date...</h2></div> 
         <div className='inputDiv'> <input type='text' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
+        <div className='issuedTableHeader'>
+                <p>Students Name</p>
+                <p>Students Email</p>
+                <p>Book Title</p>
+                <p>Issued Date</p>
+                <p>Return Date</p>
+            </div>
         <div className='issuedBookList'>
         {input !== "" ? (
                     filteredResults.map((item) => {

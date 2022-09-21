@@ -49,8 +49,15 @@ function SearchFilter() {
             
             <input type='text'  placeholder='Search by category..'  onChange={(e) => searchItems(e.target.value)}/>
             </div>
-            
+            <div className='tableHeader'>
+                <p>Book Title</p>
+                <p>Author</p>
+                <p>Amount</p>
+                <p>Book Category</p>
+                <p>Actions</p>
+            </div>
             <div className='content'> 
+          
             {searchInput.length > 0 ? (
                     filteredResults.map((item) => {
                         return (
