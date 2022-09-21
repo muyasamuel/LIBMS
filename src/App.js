@@ -4,6 +4,7 @@ import Form from './components/Form';
 import Home from './components/Home';
 import SearchFilter from './components/SearchFilter';
 import IssuedBooks from './components/IssuedBooks';
+import Contents from './components/Contents'
 
 
 
@@ -16,6 +17,7 @@ function App() {
     <Form />
     <SearchFilter />
     <IssuedBooks />
+    <Contents />
      
      
     
