@@ -7,6 +7,7 @@ function Home() {
         <nav>
         <h1><span>LIB</span>MS</h1>
         <div className='actions'>
+          <button className='navBtn'>Get Started</button>
        
         </div>
        

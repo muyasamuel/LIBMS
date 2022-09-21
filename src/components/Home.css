@@ -21,6 +21,7 @@
     letter-spacing: 5px;
     font-weight: bold;
     margin-right: 25px;
+    transition: all ease.4s;
    
     
 }
