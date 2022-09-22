@@ -1,4 +1,5 @@
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -7,7 +8,9 @@ function Home() {
         <nav>
         <h1><span>LIB</span>MS</h1>
         <div className='actions'>
-          <button className='navBtn'>Get Started</button>
+          
+          <Link className='navBtn' to="/form">Get Started</Link>
+
        
         </div>
        
@@ -15,7 +18,7 @@ function Home() {
 
         <main>
          
-          <h1>Automate <br></br>Your <span>library</span>  <br></br>to Fully Digital one...</h1>
+          <h1>Automate <br></br>Your <span>Library</span>  <br></br>to Fully Digital one...</h1>
           <div className='btnDiv'>
            <button className='mainBtn'> Get Started</button>
           </div>

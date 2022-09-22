@@ -16,6 +16,7 @@
     background: transparent;
     color:rgb(0, 255, 0);
     border: none;
+    text-decoration: none;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 5px;
