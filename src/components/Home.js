@@ -1,8 +1,15 @@
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 
 
 function Home() {
+
+  const navigate = useNavigate();
+
+  const navigateToFormsPage = () => {
+    navigate('/form');
+  }
+
   return (
     <div className='homeContainer'>
         <nav>
@@ -20,7 +27,7 @@ function Home() {
          
           <h1>Automate <br></br>Your <span>Library</span>  <br></br>to Fully Digital one...</h1>
           <div className='btnDiv'>
-           <button className='mainBtn'> Get Started</button>
+           <button onClick={navigateToFormsPage}    className='mainBtn'> Get Started</button>
           </div>
          
 
