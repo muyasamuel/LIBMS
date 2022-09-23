@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import { BsFillPersonPlusFill } from "react-icons/bs";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaEnvelope } from "react-icons/fa";
+import {  useNavigate  } from 'react-router-dom';
 import frontImage from "../images/bg4.jpg";
 import backImage from "../images/bg5.jpg";
 
 function Form() {
+
   const {
     register,
     handleSubmit,
@@ -19,17 +21,25 @@ function Form() {
     handleSubmit: handleSubmit2,
     reset: reset2
   } = useForm();
+  
+  const navigate = useNavigate();
+
+  const navigateToContents = () => {
+      navigate('/contents')
+  }
 
   const emailPattern =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const loginHandler = (data) => {
     console.log(data);
+    navigateToContents();
     reset();
   };
 
   const signUpHandler = (data) => {
     console.log(data);
+    navigateToContents();
     reset2();
   };
   return (
@@ -88,7 +98,7 @@ function Form() {
                     <a href="signup">forgot your password</a>
                   </div>
                   <div className="button input-box">
-                    <input type="submit" value="Submit" />
+                    <input  type="submit" value="Submit" />
                   </div>
                   <div className="text sign-up-text">
                     Don't have an account? <label htmlFor="flip" >Sigup now</label>
@@ -156,7 +166,7 @@ function Form() {
                     </p>
                   )}
                   <div className="button input-box">
-                    <input type="submit" value="Submit" />
+                    <input  type="submit" value="Submit" />
                   </div>
                   <div className="text sign-up-text">
                     Already have an account? <label htmlFor="flip">Login now</label>
