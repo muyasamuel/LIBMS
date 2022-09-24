@@ -1,11 +1,13 @@
 import './Contents.css';
 import { FaAdn , FaSearch, FaBoxTissue, FaClone} from "react-icons/fa";
 
+
 function Contents() {
+
   return (
     <div className='contentsContainer'>
         <div className='contentsWrapper'>
-            <div className='addContentDiv'>
+            <div  className='addContentDiv'>
             <FaAdn className='icon' />
             <h2>AddBook</h2>
             <h3> here you are given the privilege to add new book that never existed</h3>
