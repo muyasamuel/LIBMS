@@ -40,9 +40,10 @@ function SearchFilter() {
 
   return (
     <div className='searchContainer'>
+           {editCartSeen && <EditModal    />} 
        
         <div className='wrapper'>
-             {editCartSeen && <EditModal    />} 
+          
              <h1 className='editTitle'> Search Available Books and Edit... </h1>
 
             <div className='inputDiv'> 

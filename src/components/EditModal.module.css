@@ -1,12 +1,13 @@
 .backdrop {
     position: absolute;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: #00000070;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 5;
   }
 
   .modal {
@@ -15,6 +16,7 @@
     background: #fff;
     border-radius: 5px;
     border: 1px solid #000;
+    z-index: 8;
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0);
     display: flex;
     flex-direction: column;
