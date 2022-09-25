@@ -9,7 +9,7 @@ function EditModal() {
   return (
     <div className={styles.backdrop}>
        <div className={styles.modal}> 
-           <div> 
+           <div className={styles.editBookWrapper}> 
         <h3> TITLE : {title}</h3>
         <h4> AUTHOR: {author}</h4>
         <h4> CATEGORY: {category}</h4>

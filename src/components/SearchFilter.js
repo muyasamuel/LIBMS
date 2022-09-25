@@ -2,7 +2,7 @@ import './SearchFilter.css';
 import BookItem from './BookItem';
 import { booksAvailable } from './Data'
 import { useState } from 'react';
-import EditBookItem from './EditBookItem';
+import EditModal from './EditModal';
 import { useContext } from 'react'
 import { EditContext } from '../store/editContext'
 
@@ -42,7 +42,7 @@ function SearchFilter() {
     <div className='searchContainer'>
        
         <div className='wrapper'>
-             {editCartSeen && <EditBookItem   />} 
+             {editCartSeen && <EditModal    />} 
              <h1 className='editTitle'> Search Available Books and Edit... </h1>
 
             <div className='inputDiv'> 
