@@ -41,10 +41,17 @@ function EditModal() {
       onClick={(e) => e.stopPropagation()}
        className={styles.modal}>
         <div className={styles.editBookWrapper}>
-          <h3> TITLE : {title}</h3>
-          <h4> AUTHOR: {author}</h4>
-          <h4> CATEGORY: {category}</h4>
-          <h4> AMOUNT: {amount}</h4>
+          
+            <h3> TITLE : {title}  </h3>  
+             
+          
+            <h3> AUTHOR: {author}</h3>
+         
+        
+          <h3> CATEGORY: {category}</h3>
+         
+          
+          <h3> AMOUNT: {amount}</h3>
 
           <form>
             <h4> CHANGE AMOUNT :</h4>
@@ -53,7 +60,7 @@ function EditModal() {
           </form>
         </div>
 
-        <button onClick={onRemove}>Done</button>
+        <button className={styles.btn}   onClick={onRemove}>Done</button>
       </motion.div>
     </div>
   );

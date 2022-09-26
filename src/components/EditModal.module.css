@@ -27,9 +27,46 @@
   .editBookWrapper{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 7px;
     padding: 7px;
     margin: 10px 30px;
     border-radius: 10px;
-    background-color: var(--white);
+    padding: 32px;
+    background-color: lightblue;
+}
+
+
+
+.editBookWrapper form  {
+  display: flex;
+  align-items: center;
+ 
+  gap: 10px;
+}
+.editBookWrapper form input{
+  outline: none;
+  padding: 10px ;
+  border-radius: 10px;
+
+}
+
+.editBookWrapper form button {
+  padding: 10px 20px;
+   background-color: var(--mainColor);
+   border: none;
+   outline: none;
+   border-radius: 10px;
+ 
+   
+}
+
+.btn{
+   padding: 8px 40px;
+   background-color: var(--mainColor);
+   border: none;
+   outline: none;
+   border-radius: 10px;
+   margin-bottom: 10px;
+   
 }
