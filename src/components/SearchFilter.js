@@ -5,6 +5,7 @@ import { useState } from 'react';
 import EditModal from './EditModal';
 import { useContext } from 'react'
 import { EditContext } from '../store/editContext'
+import { AnimatePresence } from 'framer-motion';
 
 
 function SearchFilter() {
@@ -40,7 +41,13 @@ function SearchFilter() {
 
   return (
     <div className='searchContainer'>
-           {editCartSeen && <EditModal    />} 
+        <AnimatePresence
+           initial={false}
+           exitBeforeEnter
+           onExitComplete={() => null}>
+               {editCartSeen && <EditModal    />} 
+        </AnimatePresence>
+        
        
         <div className='wrapper'>
           

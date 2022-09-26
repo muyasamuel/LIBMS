@@ -34,7 +34,10 @@ function EditModal() {
   return (
     <div className={styles.backdrop} onClick={onRemove}>
       <motion.div 
-      
+      variants={dropIn}
+      initial="hidden"
+      animate="visible"
+      exit='exit'
       onClick={(e) => e.stopPropagation()}
        className={styles.modal}>
         <div className={styles.editBookWrapper}>
