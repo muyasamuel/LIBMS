@@ -31,10 +31,26 @@
     gap: 7px;
     padding: 7px;
     margin: 10px 30px;
-    border-radius: 10px;
-    padding: 32px;
+    border: 1px dashed #d4d4d8;
+    border-radius: 5px;
+    width: 30rem;
+    margin-bottom: 20px;
     background-color: lightblue;
 }
+.editDiv{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.label {
+  display: inline-block;
+  font-weight: bold;
+  font-style: inherit;
+  letter-spacing: 2px;
+  color: var(--mainColor);
+}
+
 
 
 

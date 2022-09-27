@@ -1,13 +1,11 @@
 .contentsContainer{
     width: 100%;
     height: 100vh;
-    background-color: black;
-    /* background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
-    background-position: center;
-    background-size: cover; */
+    background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
+    
    
  
     
@@ -42,6 +40,7 @@
     cursor: pointer;
     padding: 20px;
     border-radius: 17px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all ease-in-out .5s;
 }
 
@@ -68,7 +67,7 @@
 .issueContentDiv:hover,
 .issuedContentDiv:hover,
 .searchContentDiv:hover{
-    transform: scale(1.05); 
+    box-shadow: 4.0px 8.0px 8.0px rgba(0,0,0,0.38);
 }
 
 .icon{

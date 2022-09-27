@@ -41,17 +41,29 @@ function EditModal() {
       onClick={(e) => e.stopPropagation()}
        className={styles.modal}>
         <div className={styles.editBookWrapper}>
-          
-            <h3> TITLE : {title}  </h3>  
-             
-          
-            <h3> AUTHOR: {author}</h3>
+          <div className={styles.editDiv}>
+            <label className={styles.label}>Book  Title :</label>
+             {title} 
+          </div>
+         <div className={styles.editDiv}>
+          <label className={styles.label}>Book Author :</label>
+          {author}
+         </div>
+       <div className={styles.editDiv}>
+       <label className={styles.label}>Book Category :</label>
+         {category}
+       </div>
+
+       <div className={styles.editDiv}>
+       <label className={styles.label}>Book Amount :</label>
+        {amount}
+       </div>
          
         
-          <h3> CATEGORY: {category}</h3>
+       
          
           
-          <h3> AMOUNT: {amount}</h3>
+         
 
           <form>
             <h4> CHANGE AMOUNT :</h4>
