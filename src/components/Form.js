@@ -37,7 +37,19 @@ function Form() {
     reset();
   };
 
-  const signUpHandler = (data) => {
+  const signUpHandler = async (data) => {
+      let response =  await fetch("http://127.0.0.1:8000/api/user/sign-up/",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body:  JSON.stringify(data)
+      
+    }).catch( err => {
+      console.log(err)
+    });
+
+
     console.log(data);
     navigateToContents();
     reset2();
