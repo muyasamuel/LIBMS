@@ -11,7 +11,8 @@ function Home() {
   }
 
   return (
-    <div className='homeContainer'>
+    <div>
+          <div className='homeContainer'>
         <nav>
         <h1><span>LIB</span>MS</h1>
         <div className='actions'>
@@ -34,6 +35,13 @@ function Home() {
         </main>
        
     </div>
+    <div className='contents'>
+      
+
+    </div>
+
+    </div>
+
   )
 }
 
