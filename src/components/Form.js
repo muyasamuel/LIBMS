@@ -51,6 +51,7 @@ function Form() {
 
 
     console.log(data);
+    console.log(response)
     navigateToContents();
     reset2();
   };
