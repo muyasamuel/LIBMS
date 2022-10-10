@@ -13,8 +13,8 @@ code {
 }
 
 :root {
-  --mainColor: rgb(62, 32, 199);
+  --mainColor: #F7AB0A;
   --white: #ffffff;
   --danger: rgb(241, 15, 15);
-  --secondary: rgb(21,18,36);
+  --black: rgb(21,18,36);
 }

@@ -38,6 +38,7 @@ function Contents() {
               damping: 25,
               stiffness: 500,
             }}
+            whileHover={{ scale: 0.95}}
           >
             <FaAdn className="icon" />
             <h2> AddBook </h2>
@@ -57,7 +58,8 @@ function Contents() {
             type: "spring",
             damping: 25,
             stiffness: 500,
-          }} >
+          }}
+          whileHover={{ scale: 0.95}} >
             <FaSearch className="icon" />
             <h2>SearchFilter</h2>
             <h3>
@@ -77,7 +79,9 @@ function Contents() {
              type: "spring",
              damping: 25,
              stiffness: 500,
-           }}>
+           }}
+          
+           whileHover={{ scale: 0.95}}>
             <FaBoxTissue className="icon" />
             <h2>Issue Book</h2>
             <h3>
@@ -97,7 +101,8 @@ function Contents() {
             type: "spring",
             damping: 25,
             stiffness: 500,
-          }}>
+          }}
+          whileHover={{ scale: 0.95}}>
             <FaClone className="icon" />
             <h2>Issued Books</h2>
             <h3> A list of all issued books with the student details </h3>

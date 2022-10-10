@@ -2,26 +2,22 @@
 .homeWrapper{
     height: auto;
     width: 100%;
+    position: relative;
 }
 .homeContainer nav{
     display: flex;
     justify-content: space-between ;
     padding: 2px 100px;
     align-items: center;
-    background-color: #fff;
-    color: aliceblue;
-    /* position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
-    right: 0; */
+    right: 0; 
 }
-.actions{
-    display: flex;
-    justify-content: space-between;
-}
+
 .navBtn{
     background: transparent;
-    color:var(--mainColor);
+    color:var(--white);
     border: none;
     text-decoration: none;
     cursor: pointer;
@@ -29,19 +25,24 @@
     letter-spacing: 5px;
     font-weight: bold;
     margin-right: 25px;
-    transition: all ease.4s;
-   
+    transition: all ease-in-out .3s;
     
 }
+
 .navBtn:hover{
-    padding: 10px;
-    border: 1px solid var(--white);
+    color: var(--black);
+   border: 1px solid var(--white);
+   padding: 10px;
 }
 
 
+.homeContainer nav{
+    color: black;
+    background-color: var(--mainColor);
+}
 
 .homeContainer nav span{
-    color: var(--mainColor);
+    color: var(--white);
     font-weight: bold;
     
 }
