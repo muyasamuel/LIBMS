@@ -37,6 +37,7 @@
 
 
 .homeContainer nav{
+    z-index: 20;
     color: black;
     background-color: var(--mainColor);
 }

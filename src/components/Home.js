@@ -1,6 +1,7 @@
 import "./Home.css";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Hero from "./Hero";
 
 function Home() {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ function Home() {
           </div>
         </motion.main>
       </div>
+      <Hero />
       
     </div>
   );
