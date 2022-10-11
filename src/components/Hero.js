@@ -3,10 +3,14 @@ import { FaAdn, FaSearch, FaBoxTissue, FaClone } from "react-icons/fa";
 
 function Hero() {
   return (
+    <div className="heroContainer">
+      <h1> Libms Services </h1>
     <div className="heroWrapper">
+    
+         
       <div className="heroDiv">
         <FaAdn className="heroIcon" />
-        <h1> Add books</h1>
+        <h2> Add books</h2>
         <p>
          
           Here you are given the privilege to add new book that never existed
@@ -16,7 +20,7 @@ function Hero() {
       <div className="heroDiv">
         
         <FaSearch className="heroIcon" />
-        <h1> Search Books</h1>
+        <h2> Search Books</h2>
         <p>
           
         Search for whatever book that you think its available and given an
@@ -25,7 +29,7 @@ function Hero() {
       </div>
       <div className="heroDiv">
         <FaBoxTissue className="heroIcon" />
-        <h1> Issue Book</h1>
+        <h2> Issue Book</h2>
         <p>
         Whenever a book is issued to a student all relevant details are
               noted done against the book issued
@@ -34,11 +38,13 @@ function Hero() {
       <div className="heroDiv">
         
         <FaClone className="heroIcon" />
-        <h1> Issued Books</h1>
+        <h2> Issued Books</h2>
         <p>
         A list of all issued books with the student details
         </p>
       </div>
+      </div>
+      
     </div>
   );
 }
