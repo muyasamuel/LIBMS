@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Hero from "./Hero";
 import Main from "./Main";
+import Footer from "./Footer";
 
 function Home() {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ function Home() {
       </div>
       <Hero />
       <Main />
+      <Footer />
       
     </div>
   );
