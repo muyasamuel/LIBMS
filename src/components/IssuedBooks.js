@@ -1,5 +1,5 @@
 import './IssuedBooks.css';
-import { issuedBooks } from './Data';
+import { issuedBooks } from './data/Data';
 import IssuedBookItem from './IssuedBookItem';
 import { useState } from 'react';
 

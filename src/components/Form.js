@@ -52,7 +52,7 @@ function Form() {
 
     console.log(data);
     
-    navigateToContents();
+    
     reset2();
   };
   return (
@@ -166,8 +166,8 @@ function Form() {
                     <input
                       type="password"
                       placeholder="Enter your password"
-                      name="signupPassword"
-                      {...register2("signupPassword", {
+                      name="password"
+                      {...register2("Password", {
                         required: true,
                         pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/,
                       })}

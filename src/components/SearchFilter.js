@@ -1,6 +1,6 @@
 import './SearchFilter.css';
 import BookItem from './BookItem';
-import { booksAvailable } from './Data'
+import { booksAvailable } from './data/Data';
 import { useState } from 'react';
 import EditModal from './EditModal';
 import { useContext } from 'react'
