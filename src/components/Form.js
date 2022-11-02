@@ -54,6 +54,7 @@ function Form() {
     
     
     reset2();
+    
   };
   return (
     <div className="containerWrapper">
@@ -167,7 +168,7 @@ function Form() {
                       type="password"
                       placeholder="Enter your password"
                       name="password"
-                      {...register2("Password", {
+                      {...register2("password", {
                         required: true,
                         pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/,
                       })}
