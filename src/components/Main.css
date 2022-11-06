@@ -19,3 +19,12 @@
 -moz-box-shadow: 6px 8px 7px 9px var(--mainColor);
 
 }
+.quoteDivWrapper h1{
+  letter-spacing: 2px;
+  font-weight: lighter;
+  
+}
+
+.quote{
+  color: var(--mainColor);
+}
