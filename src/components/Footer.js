@@ -5,6 +5,7 @@ import { GiWhiteBook } from "react-icons/gi";
 function Footer() {
   return (
     <div className='footerContainer'>
+      <div> <GiWhiteBook size={80} color={"#F7AB0A"}  /></div>
       <div className='footerWrapper'> 
        <div className='footersHeader'>
         <h2>LIBMS</h2>
@@ -30,7 +31,8 @@ function Footer() {
        <div className='textFooter'>
         <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
        </div>
-       </div>
+       </div> 
+       <div><GiWhiteBook size={80} color={"#F7AB0A"}/></div>
     </div>
   )
 }
