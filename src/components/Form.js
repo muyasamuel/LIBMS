@@ -56,6 +56,11 @@ function Form() {
     reset2();
     
   };
+
+  
+
+
+
   return (
     <div className="containerWrapper">
       <div className="container">
@@ -140,7 +145,7 @@ function Form() {
                     />
                   </div>
                   {errors2.name && (
-                    <p style={{ color: "red" }}> Please fill in a name </p>
+                    <p style={{ color: "red" }}> Name should range between 5-12 characters  </p>
                   )}
 
                   <div className="input-box">
@@ -174,9 +179,9 @@ function Form() {
                       })}
                     />
                   </div>
-                  {errors2.signupPassword && (
+                  {errors2.password && (
                     <p style={{ color: "red" }}>
-                      Please fill in a correct sign up password{" "}
+                      Password should contain combination of Uppercase, lowercase and a number..
                     </p>
                   )}
                   <div className="button input-box">
