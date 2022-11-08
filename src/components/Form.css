@@ -187,3 +187,11 @@
     display: none;
   }
 }
+
+
+
+
+.signUpLabel{
+  background-color: var(--mainColor);
+  padding: 10px;
+}

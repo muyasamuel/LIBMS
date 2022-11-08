@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { BsFillPersonPlusFill } from "react-icons/bs";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaEnvelope } from "react-icons/fa";
-import {  useNavigate  } from 'react-router-dom';
+// import {  useNavigate  } from 'react-router-dom';
 import frontImage from "../images/bg4.jpg";
 import backImage from "../images/bg5.jpg";
 
@@ -22,20 +22,39 @@ function Form() {
     reset: reset2
   } = useForm();
   
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const navigateToContents = () => {
-      navigate('/contents')
-  }
+  // const navigateToContents = () => {
+  //     navigate('/contents')
+  // }
 
   const emailPattern =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const loginHandler = (data) => {
-    console.log(data);
-    navigateToContents();
-    reset();
-  };
+
+  const loginHandler =  (data) => {
+    fetch("http://127.0.0.1:8000/api/user/login/",{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body:  JSON.stringify(data)
+    
+  }).catch( err => {
+    console.log(err.message)
+  });
+
+
+  console.log(data);
+  
+  
+  reset();
+
+  
+};
+
+
+
 
   const signUpHandler =  (data) => {
       fetch("http://127.0.0.1:8000/api/user/sign-up/",{
@@ -46,7 +65,7 @@ function Form() {
       body:  JSON.stringify(data)
       
     }).catch( err => {
-      console.log(err)
+      console.log(err.response)
     });
 
 

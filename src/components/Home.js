@@ -6,29 +6,12 @@ import Main from "./Main";
 import Footer from "./Footer";
 
 function Home() {
-  const signUpHandler = async () => {
-    const response = await fetch("http://127.0.0.1:8000/api/user/sign-up/", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: "Jason Sweet",
-        email: "iamsamuel6535@gmail.com",
-        password: "sammynjomo001",
-      }),
-    });
+  
+  const navigate = useNavigate();
 
-    response.json().then((data) => {
-      console.log(data);
-    });
+  const navigateToSignUpPage = () => {
+    navigate("/signup");
   };
-  // const navigate = useNavigate();
-
-  // const navigateToFormsPage = () => {
-  //   navigate("/form");
-  // };
 
   return (
     <div className="homeWrapper">
@@ -48,7 +31,7 @@ function Home() {
             transition={{ duration: 1.2 }}
             className="actions"
           >
-            <Link className="navBtn" to="/form">
+            <Link className="navBtn" to="/signup">
               Get Started
             </Link>
           </motion.div>
@@ -65,7 +48,7 @@ function Home() {
             Digital one...
           </h1>
           <div className="btnDiv">
-            <button onClick={signUpHandler} className="mainBtn">
+            <button onClick={navigateToSignUpPage} className="mainBtn">
               Get Started
             </button>
           </div>
