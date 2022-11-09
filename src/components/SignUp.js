@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './SignUp.css'
 
 function SignUp() {
@@ -13,6 +14,13 @@ function SignUp() {
   
 
   const [success, setSuccess] = useState(false);
+
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate('/login');
+
+  }
 
  
 
@@ -53,6 +61,9 @@ function SignUp() {
     }).catch( err => {
       console.log(err.response)
     });
+
+
+    navigateToLogin();
 
     console.log(data);
       

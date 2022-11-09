@@ -67,9 +67,10 @@
 
 .container {
 
- background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.pexels.com/photos/6344238/pexels-photo-6344238.jpeg?auto=compress&cs=tinysrgb&w=1600');
+ /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.pexels.com/photos/3747505/pexels-photo-3747505.jpeg?auto=compress&cs=tinysrgb&w=1600');
  background-position: center;
- background-size: cover;
+ background-size: cover; */
+ background: linear-gradient(to bottom, #e6ae35, #755510); 
   display: flex;
   flex-direction: column;
   justify-content: center;
