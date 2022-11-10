@@ -117,8 +117,16 @@ function SignUp() {
       updatedState.password.error = 'Password cannot be empty';
       error = true;
     }
+    if (password?.value.length < 5) {
+      updatedState.password.error = 'Password cannot less than 5 characters';
+      error = true;
+    }
     if (!confirmPassword?.value) {
       updatedState.confirmPassword.error = 'Confirm Password cannot be empty';
+      error = true;
+    }
+    if (confirmPassword?.value.length < 5) {
+      updatedState.password.error = 'Password cannot less than 5 characters';
       error = true;
     }
 
