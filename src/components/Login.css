@@ -68,3 +68,8 @@
      cursor: pointer;
      letter-spacing: 1px;
    }
+   
+   .error {
+    color: #dc2626;
+  }
+  
