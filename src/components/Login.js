@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const defaulState = {
@@ -12,11 +12,11 @@ function Login() {
  const [loginFormState, setLoginFormState] =  useState(defaulState);
 
 
-//  const navigate = useNavigate();
+ const navigate = useNavigate();
 
-//  const navigateToContents = () => {
-//   navigate('/contents')
-//  }
+ const navigateToContents = () => {
+  navigate('/contents')
+ }
 
 
  const changeHandler = (field, value) => {
@@ -30,9 +30,9 @@ function Login() {
  };
 
 
- const handleSubmit = (e) => {
+ const handleSubmit =  (e) => {
     e.preventDefault();
-    let hasError =  handleLoginErrors();
+    let hasError =   handleLoginErrors();
 
     if(hasError){
       return;
@@ -43,8 +43,8 @@ function Login() {
       email: emailAddress.value,
       password: password.value,
     }
-
-    try{
+   
+    
       fetch("http://127.0.0.1:8000/api/user/login/",{
         method: "POST",
         headers: {
@@ -52,24 +52,16 @@ function Login() {
         },
         body:  JSON.stringify(user)
      
-      });
-    
-    }catch(error){
-      console.log(error);
-      
-
-    }
-
-
-
-
-
+      }).then( res => console.log(res.ok));
+      // .catch(error => console.log(error.message));
+   
     
 
     console.log(user);
 
     setLoginFormState(defaulState);
 
+    navigateToContents()
     
  }
 

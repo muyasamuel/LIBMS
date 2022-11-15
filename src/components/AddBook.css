@@ -1,6 +1,6 @@
 .addContainer{
     height: 100vh;
-    background-color: #a7bcff;
+    background: linear-gradient(to bottom, #e6ae35, #755510); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,19 +34,30 @@
     padding: 10px;
  }
 
-.addWrapper form button{ 
-    background-color: #a7bcff;
-    color: black;
-    font-weight: 800;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 15px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    margin: 20px 0;
-}
+.addWrapper form button {
+    margin-top: 20px;
+   background-color: var(--mainColor);
+    color: #000;
+    border: 2px solid #475569;
+    border-radius: 4px;
+    width: 40%;
+    align-self: center;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 5px 5px 0px 0px #475569;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all ease-in-out .2s;
+  }
 
+
+  .addWrapper  button:hover{
+    
+    transform: scale(1.15);
+     
+     
+ }
 
 .error{
     color: red;
