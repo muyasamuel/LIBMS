@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -44,16 +44,30 @@ function Login() {
       password: password.value,
     }
    
+
+
+  
+  axios({
+      method: 'post',
+      url: "http://127.0.0.1:8000/api/user/login/",
+      data: user
+  })
+  .then( (response) =>  {
+      console.log(response);
+  })
+  .catch( (error) => {
+      console.log(error);
+  });
     
-      fetch("http://127.0.0.1:8000/api/user/login/",{
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body:  JSON.stringify(user)
+      // fetch("http://127.0.0.1:8000/api/user/login/",{
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body:  JSON.stringify(user)
      
-      }).then( res => console.log(res.ok));
-      // .catch(error => console.log(error.message));
+      // }).then( res => console.log(res.ok));
+      // // .catch(error => console.log(error.message));
    
     
 
