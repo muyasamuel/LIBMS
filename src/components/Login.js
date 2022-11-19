@@ -1,5 +1,6 @@
-
+import axios from 'axios';
 import { useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 // import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
@@ -10,13 +11,14 @@ const defaulState = {
 
 function Login() {
  const [loginFormState, setLoginFormState] =  useState(defaulState);
+ const [errorMessage, setErrorMessage] = useState("");
 
 
 //  const navigate = useNavigate();
 
-//  const navigateToContents = () => {
-//   navigate('/contents')
-//  }
+// //  const navigateToContents = () => {
+// //   navigate('/contents')
+// //  }
 
 
  const changeHandler = (field, value) => {
@@ -30,9 +32,9 @@ function Login() {
  };
 
 
- const handleSubmit = (e) => {
+ const handleSubmit =  (e) => {
     e.preventDefault();
-    let hasError =  handleLoginErrors();
+    let hasError =   handleLoginErrors();
 
     if(hasError){
       return;
@@ -43,33 +45,38 @@ function Login() {
       email: emailAddress.value,
       password: password.value,
     }
-
-    try{
-      fetch("http://127.0.0.1:8000/api/user/login/",{
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body:  JSON.stringify(user)
-     
-      });
-    
-    }catch(error){
-      console.log(error);
-      
+   
+ 
+  axios({
+      method: 'post',
+      url: "http://127.0.0.1:8000/api/user/login/",
+      data: user
+  })
+  .then( (response) =>  {
+    console.log(response);
+    if(response.statusText === "OK"){
+      toast.success('Successfully logged in');
 
     }
-
-
-
-
-
+     
+  })
+  .catch( (error) => {
+   
+      const errorMsg = error.response.data.detail;
+      console.log(errorMsg);
+      setErrorMessage(errorMsg)
+  });
+    
+     
+   
     
 
     console.log(user);
 
     setLoginFormState(defaulState);
+  
 
+    // navigateToContents()
     
  }
 
@@ -107,12 +114,16 @@ function Login() {
 
  }
   
+
+
  
 
   return (
     <div className='loginContainer'>
        <form className="form-container" onSubmit={handleSubmit} >
-      
+       <div><Toaster/></div>
+        
+      <div className='error'>{errorMessage} </div>
        
       
       <div className="form-element">
