@@ -3,6 +3,7 @@ import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 // import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import { setAuthToken } from '../auth/Authenticate';
 
 const defaulState = {
   emailAddress: {value: '' , error: null },
@@ -12,13 +13,14 @@ const defaulState = {
 function Login() {
  const [loginFormState, setLoginFormState] =  useState(defaulState);
  const [errorMessage, setErrorMessage] = useState("");
+//  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 
 //  const navigate = useNavigate();
 
-// //  const navigateToContents = () => {
-// //   navigate('/contents')
-// //  }
+//  const navigateToContents = () => {
+//   navigate('/contents')
+//  }
 
 
  const changeHandler = (field, value) => {
@@ -31,9 +33,24 @@ function Login() {
      });
  };
 
+//  const getAuthentication =  async () => {
+//   const token = await localStorage.getItem('loginToken');
+
+//  if(!token){
+//   alert("something is wrong");
+//  }
+  
+//  console.log(token);
+  
+
+
+//  }
+
 
  const handleSubmit =  (e) => {
     e.preventDefault();
+
+
     let hasError =   handleLoginErrors();
 
     if(hasError){
@@ -53,11 +70,25 @@ function Login() {
       data: user
   })
   .then( (response) =>  {
+ 
     console.log(response);
-    if(response.statusText === "OK"){
+
+    if (response.data.token) {
+      const token  =  response.data.token;
+
+      localStorage.setItem("user", token);
       toast.success('Successfully logged in');
 
+      //set token to axios common header
+        setAuthToken(token);
+ 
+    
     }
+
+    return response.data;
+   
+
+  
      
   })
   .catch( (error) => {
@@ -67,18 +98,13 @@ function Login() {
       setErrorMessage(errorMsg)
   });
     
-     
-   
-    
-
     console.log(user);
-
     setLoginFormState(defaulState);
-  
-
-    // navigateToContents()
-    
+    // getAuthentication();
+     
  }
+
+
 
 
  const handleLoginErrors = () => {
