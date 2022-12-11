@@ -1,6 +1,7 @@
 .mainContainer {
+  margin-top: 20px; 
   width: 100%;
-  height: 700px;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,6 +13,7 @@
 
 .quoteDivWrapper {
   background-color: white;
+  padding: auto 20px;
   width: 70%;
   padding: 50px 90px;
   box-shadow: 6px 8px 7px 9px var(--mainColor);
