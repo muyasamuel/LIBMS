@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import './Login.css';
 import { setAuthToken } from '../auth/Authenticate';
 
@@ -10,17 +10,36 @@ const defaulState = {
   password : {value: '' , error: null }
 }
 
-function Login() {
- const [loginFormState, setLoginFormState] =  useState(defaulState);
- const [errorMessage, setErrorMessage] = useState("");
-//  const [isAuthenticated, setIsAuthenticated] = useState(false);
+ function Login() {
 
 
-//  const navigate = useNavigate();
+ const navigate = useNavigate();
 
 //  const navigateToContents = () => {
 //   navigate('/contents')
 //  }
+
+  const token =  localStorage.getItem('loginToken');
+
+  useEffect(() => {
+    // If no token exists, redirect to the login page
+    if (!token) {
+      navigate('/login')
+      
+    }else{
+      navigate('/contents')
+
+    }
+  }, [navigate, token]);
+
+
+
+ const [loginFormState, setLoginFormState] =  useState(defaulState);
+ const [errorMessage, setErrorMessage] = useState("");
+
+
+
+
 
 
  const changeHandler = (field, value) => {
@@ -34,11 +53,11 @@ function Login() {
  };
 
 //  const getAuthentication =  async () => {
-//   const token = await localStorage.getItem('loginToken');
 
-//  if(!token){
-//   alert("something is wrong");
-//  }
+ 
+
+
+ 
   
 //  console.log(token);
   
@@ -74,17 +93,21 @@ function Login() {
     console.log(response);
 
     if (response.data.token) {
+
       const token  =  response.data.token;
 
       localStorage.setItem("user", token);
+      navigate('/contents')
       toast.success('Successfully logged in');
+
 
       //set token to axios common header
         setAuthToken(token);
  
     
-    }
+    } 
 
+   
     return response.data;
    
 
