@@ -1,7 +1,7 @@
 .mainContainer {
   margin-top: 20px; 
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +13,10 @@
 
 .quoteDivWrapper {
   background-color: white;
-  padding: auto 20px;
+  margin: auto 30px;
+  padding: auto 5px;
   width: 70%;
+  font-size: 10px;
   padding: 50px 90px;
   box-shadow: 6px 8px 7px 9px var(--mainColor);
 -webkit-box-shadow: 6px 8px 7px 9px var(--mainColor);
@@ -30,3 +32,25 @@
 .quote{
   color: var(--mainColor);
 }
+
+@media screen and (min-width: 600px) {
+  .mainContainer{
+    height: 70vh;
+  }
+  .quoteDivWrapper{
+    font-size: 13px;
+  }
+ }
+
+@media screen and (min-width: 850px) {
+  .mainContainer{
+    height: 80vh;
+  }
+  .quoteDivWrapper{
+    font-size: 17px;
+  }
+  
+}
+
+
+
