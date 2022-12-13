@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import { setAuthToken } from '../auth/Authenticate';
+// import { setAuthToken } from '../auth/Authenticate';
 
 const defaulState = {
   emailAddress: {value: '' , error: null },
@@ -16,11 +16,11 @@ function Login() {
 //  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 
-//  const navigate = useNavigate();
+ const navigate = useNavigate();
 
-//  const navigateToContents = () => {
-//   navigate('/contents')
-//  }
+ const navigateToContents = () => {
+  navigate('/contents')
+ }
 
 
  const changeHandler = (field, value) => {
@@ -74,13 +74,15 @@ function Login() {
     console.log(response);
 
     if (response.data.token) {
+      navigateToContents();
       const token  =  response.data.token;
 
       localStorage.setItem("user", token);
       toast.success('Successfully logged in');
+    
 
       //set token to axios common header
-        setAuthToken(token);
+        // setAuthToken(token);
  
     
     }
