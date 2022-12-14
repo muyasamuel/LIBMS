@@ -1,0 +1,32 @@
+.logoutHeader{
+    height: 50px;
+    width: 100%;
+    background-color: var(--mainColor);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 20;
+}
+
+.logOutBtn{
+    background: transparent;
+    padding: 8px 16px;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: ease-in .4s;
+}
+
+.logOutBtn:hover{
+    background-color:var(--mainColor) ;
+    transform: scale(1.1);
+}

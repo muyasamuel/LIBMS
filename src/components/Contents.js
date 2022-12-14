@@ -3,9 +3,22 @@ import { FaAdn, FaSearch, FaBoxTissue, FaClone } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import LogoutHeader from "./LogoutHeader";
 
 function Contents() {
   const navigate = useNavigate();
+
+
+
+  useEffect(() => {
+    const token = localStorage.getItem('user');
+
+    if(!token){
+      navigate("/login")
+    }
+
+  },[navigate])
 
   const navigateToAddbook = () => {
     navigate("/contents/addbook");
@@ -24,8 +37,18 @@ function Contents() {
   };
   return (
     <AnimatePresence>
+      <div>
+       
+
+    
+      <LogoutHeader />
       <div className="contentsContainer">
+      
+        
         <div className="contentsWrapper">
+   
+
+
 
           <motion.div
             onClick={navigateToAddbook}
@@ -110,6 +133,7 @@ function Contents() {
 
 
         </div>
+      </div>
       </div>
     </AnimatePresence>
   );
