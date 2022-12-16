@@ -12,7 +12,7 @@
 
 .issueWrapper{
     background-color: #fff;
-    padding: 40px 80px;
+    padding: 25px 37px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    
@@ -73,3 +73,18 @@
     
     
 }
+
+
+@media screen and (min-width: 650px) {
+    .issueWrapper{
+        padding: 25px 70px;
+    }
+
+    }
+ 
+ @media screen and (min-width: 900px) {
+   .issueWrapper{
+    padding: 30px 85px;
+   }
+     
+     }

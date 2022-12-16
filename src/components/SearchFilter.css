@@ -2,9 +2,10 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-color: rgb(34, 34, 34);
+    /* background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -13,19 +14,30 @@
 }
 
 .wrapper{
+    
     margin-top: 50px;
     position: relative;
    
  
 }
+
+.subWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
 .inputDiv, .editTitle{
     display: flex;
     justify-content: center;
     color: #fff;
+    font-size: 17px;
 }
 
 .wrapper input{
-   width: 500px;
+   
+   width: 300px;
    outline: none;
    padding: 10px;
    border-radius: 7px;
@@ -33,13 +45,14 @@
 }
 .content{
     background-color: aliceblue;
-    width: 1200px;
+    width: 100%;
     height: 60vh;
     overflow: scroll;
     padding: 35px;
     border-radius: 18px;
     margin-top: 15px;
     scroll-behavior: smooth;
+    font-size: small;
 
 }
 
@@ -47,11 +60,13 @@
     
     margin-top: 10px;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-radius: 10px;
     background-color: var(--mainColor);
     display: flex;
+    justify-content: center;
     align-items: center;
+
     padding-left: 15px;
   
     
@@ -66,3 +81,37 @@
     display: none;
 }
 
+
+@media screen and (min-width: 650px) {
+    
+      .wrapper input{
+        width: 500px;
+      }
+      .editTitle{
+        font-size: 26px;
+      }
+      .content{
+        font-size:16px;
+      }
+
+    .subWrapper{
+       
+        width: 600px;
+    }
+    }
+
+@media screen and (min-width: 720px) {
+    .subWrapper{
+    
+        width: 800px;
+    }
+
+    }
+ 
+ @media screen and (min-width: 900px) {
+    .subWrapper{
+       
+        width: 950px;
+    }
+
+     }
