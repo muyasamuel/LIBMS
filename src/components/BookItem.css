@@ -21,7 +21,11 @@
     font-weight: bold;
     text-transform: capitalize;
 }
-
+.itemWrapper h2 {
+    flex: 1;
+    max-width: 70px;
+    overflow-x: scroll;
+}
 
 .itemWrapper h3{
     flex: 1;
@@ -65,5 +69,10 @@
         flex-direction: row;
        
      }
+     .itemWrapper h2 {
+        max-width: 80px;
+        overflow-x: visible;
+       
+    }
 
 }

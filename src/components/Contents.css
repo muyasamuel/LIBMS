@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
         
 }
 .contentsWrapper{
@@ -25,6 +26,7 @@
 } 
 .contentsContainer{ 
     height: 100vh;
+   
     
         
 }

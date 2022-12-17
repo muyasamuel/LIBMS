@@ -2,7 +2,7 @@
     background: rgb(201, 61, 61);
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 5px;
     border-radius: 8px;
     padding: 2px 10px;
     margin: 8px auto;
@@ -18,7 +18,12 @@
 }
 
 .issuedBookWrapper h3{
+    cursor: pointer;
     flex: 1;
+    overflow: scroll;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px 6px;
 }
 
 
@@ -29,3 +34,6 @@
 .issuedBookWrapper span{
     flex: 1;
 }
+
+
+

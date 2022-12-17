@@ -100,7 +100,7 @@
     }
     }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 850px) {
     .subWrapper{
     
         width: 800px;
@@ -108,10 +108,13 @@
 
     }
  
- @media screen and (min-width: 900px) {
+ @media screen and (min-width: 990px) {
     .subWrapper{
        
         width: 950px;
     }
 
      }
+
+
+   

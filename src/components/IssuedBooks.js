@@ -31,14 +31,15 @@ function IssuedBooks() {
     <div className='booksContainer'>
         <div className='issuedBooksWrapper'>
         <div className='heading'><h2> Filter to latest Return Date...</h2></div> 
-        <div className='inputDiv'> <input type='text' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
+        <div className='inputDiv'> <input type='text' placeholder='Search by the return date..' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
+        <div className='mainContentDiv'>
         <div className='issuedTableHeader'>
                 <p>Students Name</p>
                 <p>Students Email</p>
                 <p>Book Title</p>
                 <p>Issued Date</p>
                 <p>Return Date</p>
-            </div>
+        </div>
         <div className='issuedBookList'>
         {input !== "" ? (
                     filteredResults.map((item) => {
@@ -57,6 +58,9 @@ function IssuedBooks() {
                 }
             
         </div>
+            
+        </div>
+       
         </div>
     </div>
   )
