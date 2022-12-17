@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
         
 }
 .contentsWrapper{
@@ -21,10 +22,26 @@
 @media screen and (min-width: 650px) {
  .contentsWrapper{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-   
-     
+    grid-template-columns: repeat(2, 1fr);       
 } 
+.contentsContainer{ 
+    height: 100vh;
+   
+    
+        
+}
+
+}
+
+@media screen and (min-width: 850px) { 
+ .addContentDiv,
+.searchContentDiv,
+.issueContentDiv,
+.issuedContentDiv{
+    max-width: 500px;
+    max-height: 500px;
+}
+  
 }
 
 
@@ -79,3 +96,6 @@
     height: 40px;
     color: aliceblue;
 }
+
+
+  

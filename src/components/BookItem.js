@@ -10,12 +10,15 @@ function BookItem({  title, author, amount, category }  ) {
 
   return (
     <div className='itemWrapper'>
+        <div className='bookTitle'>
         <h2> {title} </h2>
+        </div>
+        
         <h3> {author} </h3>
         <p >Amount :<span> {amount}</span></p>
         <p>{category}</p>
       
-        <div>
+        <div className='actions'>
             <button id='editBtn' onClick={() => dispatch({type: 'EDIT', payload: {  title, author, amount, category } })} >EDIT</button>
             <button id='delBtn' >DELETE</button>
         </div>

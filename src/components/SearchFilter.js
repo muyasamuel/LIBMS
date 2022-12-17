@@ -57,6 +57,8 @@ function SearchFilter() {
             
             <input type='text'  placeholder='Search by category..'  onChange={(e) => searchItems(e.target.value)}/>
             </div>
+
+            <div className='subWrapper'>
             <div className='tableHeader'>
                 <p>Book Title</p>
                 <p>Author</p>
@@ -83,6 +85,9 @@ function SearchFilter() {
                 }
             
             </div>
+
+            </div>
+           
         </div>
         
 

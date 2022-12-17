@@ -14,6 +14,7 @@
 }
 
 .issuedBooksWrapper .heading{
+    font-size: 9px;
    text-align: center;
    color: aliceblue;
    text-transform: uppercase;
@@ -23,21 +24,25 @@
 
 .inputDiv{
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .issuedBooksWrapper input{
-    width: 450px;
+    width: 350px;
     outline: none;
     border: none;
     padding: 10px;
     border-radius: 7px;
     margin: auto;
  }
+ .mainContentDiv{
+    width: 460px;
+ }
  .issuedTableHeader{
     
     margin-top: 10px;
-    width: 100%;
+    width: 90%;
     height: 50px;
     border-radius: 10px;
     background-color: var(--mainColor);
@@ -53,14 +58,47 @@
 }
  .issuedBookList{
      background-color: aliceblue;
-     width: 1200px;
+     width: 90%;
      height: 68vh;
      overflow: scroll;
-     padding: 35px;
+     padding: 20px;
      border-radius: 18px;
      margin-top: 15px;
+     font-size: small;
      scroll-behavior: smooth;
  }
  ::-webkit-scrollbar {
     display: none;
+}
+
+
+
+@media screen and (min-width: 650px) {
+
+    .mainContentDiv{
+        width: 600px;
+     }
+     .issuedBooksWrapper .heading{
+        font-size: 14px;
+       
+        
+    }
+    .issuedBookList{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (min-width: 850px) {
+
+    .mainContentDiv{
+        width: 800px;
+     }
+}
+
+@media screen and (min-width: 990px) {
+
+    .mainContentDiv{
+        width: 1000px;
+     }
 }

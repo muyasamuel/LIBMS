@@ -4,7 +4,10 @@ function IssuedBookItem({studentsName, studentsEmail, title, issuedDate, returnD
   return (
     <div className='issuedBookWrapper'>
         <h2>{studentsName} </h2>
-        <h3> {studentsEmail}</h3>
+        <div className='issuedEmail'>
+           <h3> {studentsEmail}</h3>
+        </div>
+       
         <p> {title} </p>
         <span>{issuedDate}</span>
         <span>{returnDate}</span>
