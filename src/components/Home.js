@@ -1,11 +1,23 @@
 import "./Home.css";
 import {  Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Cursor , useTypewriter } from "react-simple-typewriter";
 import Hero from "./Hero";
 import Main from "./Main";
 import Footer from "./Footer";
 
 function Home() {
+
+  const [text ] = useTypewriter({
+    words: ["Capable of adding New books or add Existing ones...",
+     "You can Search available books by their Category...",
+    "Able to Edit on the Book Amount or Entirely delete a book from Store... ",
+    "Ability to Check the Lended Books and Check on latest Return Date..."
+  ],
+  loop: true,
+  delaySpeed: 2000
+
+  });
   
   const navigate = useNavigate();
 
@@ -47,6 +59,10 @@ function Home() {
             Automate <br></br>Your <span>Library</span> <br></br>to Fully
             Digital one...
           </h1>
+          <h2>
+            <span>{text}</span>
+             <Cursor  />
+          </h2>
           <div className="btnDiv">
             <button onClick={navigateToSignUpPage} className="mainBtn">
               Get Started

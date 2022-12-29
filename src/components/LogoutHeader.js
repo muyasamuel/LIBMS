@@ -4,7 +4,9 @@ import './LogoutHeader.css'
 function LogoutHeader() {
 
     const logout = () => {
+     
          localStorage.removeItem('user');
+
         
          Navigate('/login');
      

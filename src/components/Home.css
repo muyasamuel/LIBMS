@@ -74,6 +74,7 @@
  }
 
 
+
 .mainBtn{
     background: transparent;
     padding: 14px 35px;
@@ -87,6 +88,9 @@
     margin-right: 10px;
     transition: ease-in .4s;
 }
+.homeContainer main h2{
+    font-size: 14px;
+ }
 
 
 
@@ -116,6 +120,9 @@ main span{
         letter-spacing: 3px;
      
         
+     }
+     .homeContainer main h2{
+        font-size: 18px;
      }
    }
 
