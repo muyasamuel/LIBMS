@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react'
+import { useState  } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import './Login.css';
-import { setAuthToken } from '../auth/Authenticate';
+
+
 
 const defaulState = {
   emailAddress: {value: '' , error: null },
@@ -12,34 +13,14 @@ const defaulState = {
 
  function Login() {
 
+  const navigate = useNavigate();
 
- const navigate = useNavigate();
-
-//  const navigateToContents = () => {
-//   navigate('/contents')
-//  }
-
-  const token =  localStorage.getItem('loginToken');
-
-  useEffect(() => {
-    // If no token exists, redirect to the login page
-    if (!token) {
-      navigate('/login')
-      
-    }else{
-      navigate('/contents')
-
-    }
-  }, [navigate, token]);
-
-
+  const navigateToContents = () => {
+    navigate("/contents");
+  };
 
  const [loginFormState, setLoginFormState] =  useState(defaulState);
  const [errorMessage, setErrorMessage] = useState("");
-
-
-
-
 
 
  const changeHandler = (field, value) => {
@@ -52,22 +33,13 @@ const defaulState = {
      });
  };
 
-//  const getAuthentication =  async () => {
 
- 
-
-
- 
-  
-//  console.log(token);
-  
-
-
-//  }
 
 
  const handleSubmit =  (e) => {
     e.preventDefault();
+
+    
 
 
     let hasError =   handleLoginErrors();
@@ -97,23 +69,19 @@ const defaulState = {
       const token  =  response.data.token;
 
       localStorage.setItem("user", token);
-      navigate('/contents')
+     
       toast.success('Successfully logged in');
 
-
-      //set token to axios common header
-        setAuthToken(token);
- 
-    
+      navigateToContents();
     } 
 
-   
+    
+
     return response.data;
    
-
-  
-     
   })
+  
+
   .catch( (error) => {
    
       const errorMsg = error.response.data.detail;
@@ -123,7 +91,7 @@ const defaulState = {
     
     console.log(user);
     setLoginFormState(defaulState);
-    // getAuthentication();
+    
      
  }
 
@@ -164,53 +132,61 @@ const defaulState = {
  }
   
 
-
- 
-
-  return (
-    <div className='loginContainer'>
-       <form className="form-container" onSubmit={handleSubmit} >
-       <div><Toaster/></div>
-        
-      <div className='error'>{errorMessage} </div>
-       
-      
-      <div className="form-element">
-        <label className="label">Email Address</label>
-        <input
-          type="email"
-          className="input"
-          placeholder="contact@gmail.com"
-          value= {loginFormState?.emailAddress?.value}
-          onChange={(e) => changeHandler('emailAddress', e.target.value)}
-        
-        />
-        {loginFormState.emailAddress.error && <small className='error' > {loginFormState.emailAddress.error}</small>}
-        
-       </div>
-      <div className="form-element">
-        <label className="label">Password</label>
-        <input
-          type="password"
-          className="input" 
-          value= {loginFormState?.password?.value}
-          onChange={(e) => changeHandler('password', e.target.value)}
-        
+    return (
+      <div className='loginContainer'>
+         <form className="form-container" onSubmit={handleSubmit} >
+         <div><Toaster/></div>
           
-        />
-       {loginFormState.password.error && <small className='error'> {loginFormState.password.error}</small>}
-       
+        <div className='error'>{errorMessage} </div>
+         
+        
+        <div className="form-element">
+          <label className="label">Email Address</label>
+          <input
+            type="email"
+            className="input"
+            placeholder="contact@gmail.com"
+            value= {loginFormState?.emailAddress?.value}
+            onChange={(e) => changeHandler('emailAddress', e.target.value)}
+          
+          />
+          {loginFormState.emailAddress.error && <small className='error' > {loginFormState.emailAddress.error}</small>}
+          
+         </div>
+        <div className="form-element">
+          <label className="label">Password</label>
+          <input
+            type="password"
+            className="input" 
+            value= {loginFormState?.password?.value}
+            onChange={(e) => changeHandler('password', e.target.value)}
+          
+            
+          />
+         {loginFormState.password.error && <small className='error'> {loginFormState.password.error}</small>}
+         
+        </div>
+
+        
+        
+        <button type="submit" className="button">
+          Login
+        </button>
+
+        <div>
+          <p>Do not have an Account : <span> <Link to="/signUp" >SignUp</Link></span></p>
+        </div>
+        
+        
+      </form>
+     
       </div>
       
-      <button type="submit" className="button">
-        Login
-      </button>
-      
-      
-    </form>
-    </div>
-    
-  )
-}
+    )
 
-export default Login
+  }
+
+
+
+export default Login;
+
