@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { useState } from 'react'
+import { useState  } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import './Login.css';
-import { setAuthToken } from '../auth/Authenticate';
+
 
 
 const defaulState = {
@@ -13,28 +13,14 @@ const defaulState = {
 
  function Login() {
 
+  const navigate = useNavigate();
 
+  const navigateToContents = () => {
+    navigate("/contents");
+  };
 
  const [loginFormState, setLoginFormState] =  useState(defaulState);
  const [errorMessage, setErrorMessage] = useState("");
-
-
-
- const navigate = useNavigate();
-
- const navigateToDashboard = () => {
-  navigate("/contents");
- }
-
-  const isLoggedIn = () => {
-    let token = localStorage.getItem("user");
-
-    if(token){
-      return true;
-    }else{
-      return false;
-    }
-  }
 
 
  const changeHandler = (field, value) => {
@@ -83,23 +69,19 @@ const defaulState = {
       const token  =  response.data.token;
 
       localStorage.setItem("user", token);
-      navigate('/contents')
+     
       toast.success('Successfully logged in');
 
-
-      //set token to axios common header
-        setAuthToken(token);
- 
-    
+      navigateToContents();
     } 
 
-   
+    
+
     return response.data;
    
-
-  
-     
   })
+  
+
   .catch( (error) => {
    
       const errorMsg = error.response.data.detail;
@@ -150,8 +132,6 @@ const defaulState = {
  }
   
 
- 
-  if(!isLoggedIn) {
     return (
       <div className='loginContainer'>
          <form className="form-container" onSubmit={handleSubmit} >
@@ -186,22 +166,27 @@ const defaulState = {
          {loginFormState.password.error && <small className='error'> {loginFormState.password.error}</small>}
          
         </div>
+
+        
         
         <button type="submit" className="button">
           Login
         </button>
+
+        <div>
+          <p>Do not have an Account : <span> <Link to="/signUp" >SignUp</Link></span></p>
+        </div>
         
         
       </form>
+     
       </div>
       
     )
 
   }
-  else{
-    navigateToDashboard();
-  }
-  
-}
 
-export default Login
+
+
+export default Login;
+

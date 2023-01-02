@@ -22,7 +22,7 @@ function Home() {
   const navigate = useNavigate();
 
   const navigateToSignUpPage = () => {
-    navigate("/signup");
+    navigate("/login");
   };
 
   return (
