@@ -14,10 +14,10 @@ const defaulState = {
  function Login() {
 
   const navigate = useNavigate();
-
   const navigateToContents = () => {
     navigate("/contents");
   };
+  
 
  const [loginFormState, setLoginFormState] =  useState(defaulState);
  const [errorMessage, setErrorMessage] = useState("");
@@ -38,10 +38,6 @@ const defaulState = {
 
  const handleSubmit =  (e) => {
     e.preventDefault();
-
-    
-
-
     let hasError =   handleLoginErrors();
 
     if(hasError){
