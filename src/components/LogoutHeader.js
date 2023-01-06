@@ -1,15 +1,12 @@
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"
 import './LogoutHeader.css'
 
 function LogoutHeader() {
+ const navigate = useNavigate();
 
-    const logout = () => {
-     
-         localStorage.removeItem('user');
-
-        
-         Navigate('/login');
-     
+    const logout = () => { 
+         localStorage.removeItem('user'); 
+          return navigate("/login");
     }
 
 
