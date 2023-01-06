@@ -3,7 +3,7 @@ import { FaAdn, FaSearch, FaBoxTissue, FaClone } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useState } from "react";
-// import LogoutHeader from "./LogoutHeader";
+import LogoutHeader from "./LogoutHeader";
 
 
 const Contents =    () => {
@@ -53,7 +53,8 @@ const Contents =    () => {
   return (
     isAuthenthicated ? 
    
-      
+      <div>
+        <LogoutHeader />
       <div className="contentsContainer">
         <div className="contentsWrapper">
           <div onClick={navigateToAddbook} className="addContentDiv">
@@ -90,7 +91,7 @@ const Contents =    () => {
           </div>
         </div>
       </div>
-
+     </div>
       : <Login />
     
   );
