@@ -8,12 +8,11 @@ import { EditContext } from '../store/editContext'
 import { AnimatePresence } from 'framer-motion';
 
 
-function SearchFilter() {
-    const { state } = useContext(EditContext);
-    
-    const { editCartSeen } = state;
 
-  
+function SearchFilter() {
+
+    const { state } = useContext(EditContext);
+    const { editCartSeen } = state;
 
 
   const [searchInput, setSearchInput] = useState('');
