@@ -16,7 +16,6 @@ const Contents =    () => {
 
   const isLoggedIn = async () => {
     const token = await localStorage.getItem("user");
-    console.log(token)
     if(token !== null && token !== undefined ){
       setIsAuthenticated(true);
     }else{
