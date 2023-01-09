@@ -1,32 +1,58 @@
 import './SearchFilter.css';
 import BookItem from './BookItem';
-import { booksAvailable } from './data/Data';
 import { useState } from 'react';
 import EditModal from './EditModal';
 import { useContext } from 'react'
 import { EditContext } from '../store/editContext'
 import { AnimatePresence } from 'framer-motion';
+import axios from 'axios';
+import { useEffect } from 'react';
+
 
 
 
 function SearchFilter() {
 
-    const { state } = useContext(EditContext);
-    const { editCartSeen } = state;
+const { state } = useContext(EditContext);
+const { editCartSeen } = state;
 
 
   const [searchInput, setSearchInput] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
+  const [booksAvailable, setBooksAvailable ] = useState([]);
+
+
+  useEffect(() => {
+        fetchData()
+  },[])
+
+  const fetchData = async () => {
+    await axios
+      .get("http://127.0.0.1:8000/api/books/book-list/")
+      .then((res) => {
+        if (res.status === 200) {
+          const books = res.data.books;
+          console.log(books);
+          setBooksAvailable(books);
+          
+        }
+      
+      })
+      .catch((err) => {
+        console.log("Error :" + err);
+  });
+  };
+
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
    
     if (searchInput !== '') {
         const filteredData = booksAvailable.filter((item) => {
-            return Object.values(item.category).join('').toLowerCase().includes(searchInput.toLowerCase())
+            return Object.values(item.book_category).join('').toLowerCase().includes(searchInput.toLowerCase())
         })
         setFilteredResults(filteredData);
-        console.log('rendered')
+      
     }
     else{
         setFilteredResults(booksAvailable);
@@ -42,7 +68,7 @@ function SearchFilter() {
     <div className='searchContainer'>
         <AnimatePresence
            initial={false}
-           exitBeforeEnter
+        //    exitBeforeEnter ={}
            onExitComplete={() => null}>
                {editCartSeen && <EditModal    />} 
         </AnimatePresence>
