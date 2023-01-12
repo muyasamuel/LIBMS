@@ -1,76 +1,12 @@
-/* .formContainer {
-    background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .formWrapper {
-    background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/415071/pexels-photo-415071.jpeg?auto=compress&cs=tinysrgb&w=1600') ;
-    background-position: center;
-    background-size: cover;
-    height: 550px;
-    border-radius: 10px;
-    color: black;
-    padding: 20px 80px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 35px;
-    transition: all ease-in-out .4s;
-  }
-
-  .formWrapper:hover{ 
-    box-shadow: 0px 5px 20px rgb(0,0,0,0.5);
-  
-
-  }
-
-.inputBox{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.inputBox input{
-  width: 350px;
-  padding: 14px;
-  border: none;
-  background: none;
-  border-bottom: 1px solid var(--white);
-}
 
 
-.formWrapper button{
-  margin-top: 40px;
-  padding: 10px 60px ;
-  border-radius: 10px;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  transition: all ease .4s;
- 
-}
-
-.formWrapper button:hover{
-  background-color: var(--mainColor);
-
-}
- */
 
  
  
 
 
 .container {
-
- /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.pexels.com/photos/3747505/pexels-photo-3747505.jpeg?auto=compress&cs=tinysrgb&w=1600');
- background-position: center;
- background-size: cover; */
- background: linear-gradient(to bottom, #e6ae35, #755510); 
+  background: linear-gradient(to bottom, #e6ae35, #755510); 
   display: flex;
   flex-direction: column;
   justify-content: center;
