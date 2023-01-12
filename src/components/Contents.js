@@ -1,7 +1,6 @@
 import "./Contents.css";
 import { FaAdn, FaSearch, FaBoxTissue, FaClone } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Login from "./Login";
 import { useState } from "react";
 import LogoutHeader from "./LogoutHeader";
 
@@ -18,8 +17,6 @@ const Contents =    () => {
     const token = await localStorage.getItem("user");
     if(token !== null && token !== undefined ){
       setIsAuthenticated(true);
-    }else{
-      setIsAuthenticated(false);
     }
     
   };
@@ -50,7 +47,7 @@ const Contents =    () => {
   };
 
   return (
-    isAuthenthicated ? 
+    isAuthenthicated &&
    
       <div>
         <LogoutHeader />
@@ -65,6 +62,8 @@ const Contents =    () => {
             </h3>
           </div>
 
+
+          
           <div onClick={navigateToEdit} className="searchContentDiv">
             <FaSearch className="icon" />
             <h2>SearchFilter</h2>
@@ -91,7 +90,7 @@ const Contents =    () => {
         </div>
       </div>
      </div>
-      : <Login />
+    
     
   );
 };
