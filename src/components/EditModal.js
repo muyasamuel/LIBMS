@@ -33,46 +33,43 @@ function EditModal() {
 
   return (
     <div className={styles.backdrop} onClick={onRemove}>
-      <motion.div 
-      variants={dropIn}
-      initial="hidden"
-      animate="visible"
-      exit='exit'
-      onClick={(e) => e.stopPropagation()}
-       className={styles.modal}>
+      <motion.div
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={(e) => e.stopPropagation()}
+        className={styles.modal}
+      >
         <div className={styles.editBookWrapper}>
           <div className={styles.editDiv}>
-            <label className={styles.label}>Book  Title :</label>
-             {title} 
+            <label className={styles.label}>Book Title :</label>
+            {title}
           </div>
-         <div className={styles.editDiv}>
-          <label className={styles.label}>Book Author :</label>
-          {author}
-         </div>
-       <div className={styles.editDiv}>
-       <label className={styles.label}>Book Category :</label>
-         {category}
-       </div>
+          <div className={styles.editDiv}>
+            <label className={styles.label}>Book Author :</label>
+            {author}
+          </div>
+          <div className={styles.editDiv}>
+            <label className={styles.label}>Book Category :</label>
+            {category}
+          </div>
 
-       <div className={styles.editDiv}>
-       <label className={styles.label}>Book Amount :</label>
-        {amount}
-       </div>
-         
-        
-       
-         
-          
-         
+          <div className={styles.editDiv}>
+            <label className={styles.label}>Book Amount :</label>
+            {amount}
+          </div>
 
-          <form>
+          <form className={styles.form}>
             <h4> CHANGE AMOUNT :</h4>
             <input type="number" />
             <button>Submit</button>
           </form>
         </div>
 
-        <button className={styles.btn}   onClick={onRemove}>Done</button>
+        <button className={styles.btn} onClick={onRemove}>
+          Done
+        </button>
       </motion.div>
     </div>
   );
