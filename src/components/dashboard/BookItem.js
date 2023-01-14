@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { EditContext } from '../store/editContext';
+import { EditContext } from '../../store/editContext';
 import './BookItem.css'
 
 function BookItem({  title, author, amount, book_category }  ) {

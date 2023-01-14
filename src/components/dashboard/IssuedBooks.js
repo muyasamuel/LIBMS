@@ -1,7 +1,7 @@
 import './IssuedBooks.css';
-import { issuedBooks } from './data/Data';
-import IssuedBookItem from './IssuedBookItem';
 import { useState } from 'react';
+import IssuedBookItem from './IssuedBookItem';
+import { issuedBooks } from '../data/Data';
 
 function IssuedBooks() {
  const [input , setInput] = useState('');

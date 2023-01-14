@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { EditContext } from "../store/editContext";
+
 import styles from "./EditModal.module.css";
 import { motion } from "framer-motion";
+import { EditContext } from "../../store/editContext";
 
 function EditModal() {
   const { state, dispatch } = useContext(EditContext);
