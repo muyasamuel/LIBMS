@@ -1,12 +1,12 @@
 import './SearchFilter.css';
 import BookItem from './BookItem';
 import { useState } from 'react';
-import EditModal from './EditModal';
 import { useContext } from 'react'
-import { EditContext } from '../store/editContext'
+import { EditContext } from '../../store/editContext'
 import { AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 import { useEffect } from 'react';
+import EditModal from '../modal/EditModal';
 
 
 
@@ -70,7 +70,7 @@ const { editCartSeen } = state;
            initial={false}
         //    exitBeforeEnter ={}
            onExitComplete={() => null}>
-               {editCartSeen && <EditModal    />} 
+               {editCartSeen && <EditModal  />} 
         </AnimatePresence>
         
        
