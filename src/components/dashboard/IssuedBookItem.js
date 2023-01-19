@@ -1,16 +1,16 @@
 import './IssuedBookItem.css'
 
-function IssuedBookItem({studentsName, studentsEmail, title, issuedDate, returnDate}) {
+function IssuedBookItem({student_name, student_email, title, issue_date, return_date}) {
   return (
     <div className='issuedBookWrapper'>
-        <h2>{studentsName} </h2>
+        <h2>{student_name} </h2>
         <div className='issuedEmail'>
-           <h3> {studentsEmail}</h3>
+           <h3> {student_email}</h3>
         </div>
        
-        <p> {title} </p>
-        <span>{issuedDate}</span>
-        <span>{returnDate}</span>
+        <p className='title'> {title} </p>
+        <span>{issue_date}</span>
+        <span>{return_date}</span>
     </div>
   )
 }

@@ -34,6 +34,6 @@
 .issuedBookWrapper span{
     flex: 1;
 }
-
-
-
+.title{
+    margin-left: 25px;
+}

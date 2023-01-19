@@ -1,12 +1,38 @@
 import './IssuedBooks.css';
 import { useState } from 'react';
 import IssuedBookItem from './IssuedBookItem';
-import { issuedBooks } from '../data/Data';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 function IssuedBooks() {
  const [input , setInput] = useState('');
  const [ filteredResults, setFilteredResults] = useState([]);
+ const [issuedBooks, setIssuedBooks] = useState([]);
  
+useEffect(()=> {
+  fetchData();
+}, [])
+
+
+ const fetchData = async () => {
+  await axios
+    .get("http://localhost:8000/api/books/issue-book/")
+    .then((res) => {
+     
+      if (res.status === 200) {
+        const books = res.data.books;
+        setIssuedBooks(books);
+      
+        
+      }
+    
+    })
+    .catch((err) => {
+      console.log("Error :" + err);
+});
+};
+
+
 
  const searchDate = (date) => {
    setInput(date);
@@ -15,7 +41,7 @@ function IssuedBooks() {
    if(input !== "" ){
   
      const filteredDates = issuedBooks.filter((item) => {
-    return Object.values(item.returnDate).join('').toLowerCase().includes(input);
+    return Object.values(item.return_date).join('').toLowerCase().includes(input);
    
    });
  
