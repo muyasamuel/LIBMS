@@ -8,9 +8,6 @@ import LogoutHeader from "./LogoutHeader";
 const Contents =    () => {
   const navigate = useNavigate();
 
- 
-
-
   const [isAuthenthicated, setIsAuthenticated] = useState(false);
 
   const isLoggedIn = async () => {
@@ -25,10 +22,6 @@ const Contents =    () => {
 
 
  
-
-
-
-
 
   const navigateToAddbook = () => {
     navigate("/contents/addbook");

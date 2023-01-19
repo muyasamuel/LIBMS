@@ -11,6 +11,7 @@
 }
 
 .issueWrapper{
+    position: relative;
     background-color: #fff;
     padding: 25px 26px;
     border-radius: 10px;
@@ -50,9 +51,9 @@
    
 }
 
-.issueWrapper button {
+.issueWrapperBtn {
     margin-top: 20px;
-   background-color: var(--mainColor);
+    background-color: var(--mainColor);
     color: #000;
     border: 2px solid #475569;
     border-radius: 4px;
@@ -60,18 +61,20 @@
     align-self: center;
     padding: 10px;
     position: relative;
-    z-index: 10;
     box-shadow: 5px 5px 0px 0px #475569;
     cursor: pointer;
     letter-spacing: 1px;
     transition: all ease-in-out .2s;
   }
 
-.issueWrapper button:hover{
+.issueWrapperBtn:hover{
     
    transform: scale(1.15);
     
     
+}
+.datePicker{
+    z-index: 30;
 }
 
 
