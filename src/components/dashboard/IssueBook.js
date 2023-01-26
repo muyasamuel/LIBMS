@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import axios from "axios";
+import { useEffect } from "react";
 
 function IssueBook() {
   const defaultFormState = {
@@ -13,7 +14,7 @@ function IssueBook() {
   };
 
   const [formState, setFormState] = useState(defaultFormState);
-  const [issueDate, setIssueDate] = useState(new Date());
+  const [issueDate, setIssueDate] = useState(null);
   const [returnDate, setReturnDate] = useState(null);
 
   const onChangeHandler = (field, value) => {
@@ -28,6 +29,13 @@ function IssueBook() {
 
   const formatIssueDate = moment().utc(issueDate).format();
   const formatReturnDate = moment().utc(returnDate).format();
+
+
+  useEffect(()=> {
+     console.log("issueDate" , formatReturnDate)
+  },[formatReturnDate])
+
+
 
   const submitHandler = (e) => {
     e.preventDefault();

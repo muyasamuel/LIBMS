@@ -43,6 +43,8 @@ const { editCartSeen } = state;
   });
   };
 
+ 
+
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
