@@ -1,11 +1,12 @@
-import { useContext } from 'react';
+import { useContext} from 'react';
 import { EditContext } from '../../store/editContext';
 import './BookItem.css'
 
-function BookItem({  title, author, amount, book_category }  ) {
+function BookItem({ id, title, author, amount, book_category , deleteBook }  ) {
+
  
- 
-  const { dispatch } = useContext(EditContext);
+
+const { dispatch } = useContext(EditContext);
    
 
   return (
@@ -20,7 +21,7 @@ function BookItem({  title, author, amount, book_category }  ) {
       
         <div className='actions'>
             <button id='editBtn' onClick={() => dispatch({type: 'EDIT', payload: {  title, author, amount, book_category } })} >EDIT</button>
-            <button id='delBtn' >DELETE</button>
+            <button id='delBtn' onClick={(e) => deleteBook(id,e)}   >DELETE</button>
         </div>
          
     </div>
