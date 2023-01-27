@@ -1,24 +1,9 @@
-
-import axios from 'axios';
 import { useContext} from 'react';
 import { EditContext } from '../../store/editContext';
 import './BookItem.css'
 
-function BookItem({ id, title, author, amount, book_category }  ) {
+function BookItem({ id, title, author, amount, book_category , deleteBook }  ) {
 
-
- 
-
- const deleteBook =  (id, e) => {
-  e.preventDefault();
-  axios.delete(`http://localhost:8000/api/books/delete-book/${id}`)
-  .then(response => console.log("Delete",response));
-  // .catch(error => {
-  //     setErrorMessage(error.message);
-  //     console.error('There was an error!', error);
-  // });
-  
-}
  
 
 const { dispatch } = useContext(EditContext);

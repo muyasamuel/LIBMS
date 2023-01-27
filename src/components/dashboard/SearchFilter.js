@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 import { useEffect } from 'react';
 import EditModal from '../modal/EditModal';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -62,6 +63,22 @@ const { editCartSeen } = state;
 }
    
 
+  const deleteBook =  (id, e) => {
+    e.preventDefault();
+    axios.delete(`http://localhost:8000/api/books/delete-book/${id}`)
+    .then(response => {
+      if(response.status === 204){
+        
+        toast.success('Successfully Deleted Book');
+        const remainingBooks = booksAvailable.filter((book) => book.id !== id)
+        setBooksAvailable(remainingBooks)
+    }
+    
+        console.log("Delete",response) }
+      );
+    
+  }
+
 
 
 
@@ -74,6 +91,7 @@ const { editCartSeen } = state;
            onExitComplete={() => null}>
                {editCartSeen && <EditModal  />} 
         </AnimatePresence>
+        <Toaster />
         
        
         <div className='wrapper'>
@@ -98,13 +116,13 @@ const { editCartSeen } = state;
             {searchInput.length > 0 ? (
                     filteredResults.map((item) => {
                         return (
-                            <BookItem  key={item.id} {...item}  />
+                            <BookItem  key={item.id} {...item} deleteBook={deleteBook}  />
                         )
                     })
                 ) : (
                     booksAvailable.map((item) => {
                         return (
-                           <BookItem  key={item.id} {...item}  />
+                           <BookItem  key={item.id} {...item} deleteBook={deleteBook}    />
                         )
                     })
                 )
