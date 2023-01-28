@@ -2,7 +2,7 @@ import "./Contents.css";
 import { FaAdn, FaSearch, FaBoxTissue, FaClone } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import LogoutHeader from "./LogoutHeader";
+import Navbar from "../Navbar/Navbar";
 
 
 const Contents =    () => {
@@ -43,7 +43,7 @@ const Contents =    () => {
     isAuthenthicated &&
    
       <div>
-        <LogoutHeader />
+        <Navbar />
       <div className="contentsContainer">
         <div className="contentsWrapper">
           <div onClick={navigateToAddbook} className="addContentDiv">

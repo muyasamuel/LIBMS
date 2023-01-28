@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import axios from "axios";
 import { useEffect } from "react";
+import Navbar from "../Navbar/Navbar";
 
 function IssueBook() {
   const defaultFormState = {
@@ -112,7 +113,10 @@ function IssueBook() {
 
 
   return (
+    <>
+    <Navbar />
     <div className="issueContainer">
+       
       <div>
         <h1>Issue Book</h1>
         <h3>Note: Only one book is issued at a GO !!!</h3>
@@ -195,6 +199,7 @@ function IssueBook() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

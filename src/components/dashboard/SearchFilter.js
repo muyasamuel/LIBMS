@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import EditModal from '../modal/EditModal';
 import toast, { Toaster } from 'react-hot-toast';
+import Navbar from '../Navbar/Navbar';
 
 
 
@@ -84,10 +85,12 @@ const { editCartSeen } = state;
 
 
   return (
+    <>
+    <Navbar />
     <div className='searchContainer'>
+       
         <AnimatePresence
            initial={false}
-        //    exitBeforeEnter ={}
            onExitComplete={() => null}>
                {editCartSeen && <EditModal  />} 
         </AnimatePresence>
@@ -137,7 +140,8 @@ const { editCartSeen } = state;
         
 
     </div>
-  )
+    </>
+  );
 }
 
 export default SearchFilter;

@@ -2,6 +2,7 @@ import "./AddBook.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
+import Navbar from "../Navbar/Navbar";
 
 const AddBook = () => {
    const { register, handleSubmit , formState : { errors}, reset} = useForm();
@@ -35,7 +36,8 @@ const AddBook = () => {
  
    };
   return (
-    
+    <>
+    <Navbar />
     <div className="addContainer">
       <Toaster />
       <div className="addWrapper">
@@ -72,6 +74,7 @@ const AddBook = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

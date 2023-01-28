@@ -20,11 +20,6 @@ const EditProvider = ({children}) => {
 
    const [state , dispatch] = useReducer(EditReducer, defaultState);
 
-
-
-
-
-  
     return (
         <EditContext.Provider value={{
             dispatch,

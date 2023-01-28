@@ -11,11 +11,6 @@ import SignUp from "./components/forms/SignUp";
 
 
 
-
-
-
-
-
 function App() {
   return ( 
     <div className="App">

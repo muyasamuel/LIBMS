@@ -3,6 +3,7 @@ import { useState } from 'react';
 import IssuedBookItem from './IssuedBookItem';
 import axios from 'axios';
 import { useEffect } from 'react';
+import Navbar from '../Navbar/Navbar';
 
 function IssuedBooks() {
  const [input , setInput] = useState('');
@@ -54,7 +55,10 @@ useEffect(()=> {
 
  }
   return (
+    <>
+    <Navbar />
     <div className='booksContainer'>
+       
         <div className='issuedBooksWrapper'>
         <div className='heading'><h2> Filter to latest Return Date...</h2></div> 
         <div className='inputDiv'> <input type='text' placeholder='Search by the return date..' value={input}  onChange={(e) => searchDate(e.target.value)}  /></div>
@@ -89,6 +93,7 @@ useEffect(()=> {
        
         </div>
     </div>
+    </>
   )
 }
 
