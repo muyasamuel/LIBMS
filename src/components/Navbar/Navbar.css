@@ -1,4 +1,4 @@
-.logoutHeader{
+.header{
     height: 50px;
     width: 100%;
     background-color: var(--mainColor);
@@ -7,9 +7,30 @@
     left: 0;
     right: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     z-index: 20;
+}
+.header ul {
+    display: flex;
+    gap: 30px;
+}
+
+.header ul li {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+
+.header ul li :link{
+    text-decoration: none;
+    color: black;
+    
+}
+.header ul li :link:hover{
+    text-decoration: underline;
+     
 }
 
 .logOutBtn{
