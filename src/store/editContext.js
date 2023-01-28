@@ -4,7 +4,7 @@ import { EditReducer } from "../reducers/EditReducer";
 const EditContext = createContext();
 
 const defaultState = {
-    
+        id:"",
         title: '',
         author: "",
         category: '',

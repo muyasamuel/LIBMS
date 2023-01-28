@@ -4,7 +4,6 @@ import './BookItem.css'
 
 function BookItem({ id, title, author, amount, book_category , deleteBook }  ) {
 
- 
 
 const { dispatch } = useContext(EditContext);
    
@@ -20,7 +19,7 @@ const { dispatch } = useContext(EditContext);
         <p>{book_category}</p>
       
         <div className='actions'>
-            <button id='editBtn' onClick={() => dispatch({type: 'EDIT', payload: {  title, author, amount, book_category } })} >EDIT</button>
+            <button id='editBtn' onClick={() => dispatch({type: 'EDIT', payload: { id, title, author, amount, book_category } })} >EDIT</button>
             <button id='delBtn' onClick={(e) => deleteBook(id,e)}   >DELETE</button>
         </div>
          
