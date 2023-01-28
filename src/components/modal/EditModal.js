@@ -1,15 +1,40 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import styles from "./EditModal.module.css";
 import { motion } from "framer-motion";
 import { EditContext } from "../../store/editContext";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function EditModal() {
   const { state, dispatch } = useContext(EditContext);
+  const [inputAmount, setInputAmount] = useState("");
+  
 
   const { title, author, category, amount } = state;
 
   const onRemove = () => dispatch({ type: "REMOVE" });
+
+  const editAmount = async (state) => {
+
+    await axios
+      .patch("http://localhost:8000/api/books/edit-book/", {
+        id: state.id,
+        title: state.title,
+        author: state.author,
+        amount: inputAmount,
+        book_category: state.book_category,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("Successfully Updated Book");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("This didn't work.Something Went Wrong...");
+      });
+  };
 
   const dropIn = {
     hidden: {
@@ -32,8 +57,14 @@ function EditModal() {
     },
   };
 
+ 
+
   return (
-    <div className={styles.backdrop} onClick={onRemove}>
+       
+     
+   
+     <div className={styles.backdrop} onClick={onRemove}>
+      <Toaster />
       <motion.div
         variants={dropIn}
         initial="hidden"
@@ -61,9 +92,13 @@ function EditModal() {
             {amount}
           </div>
 
-          <form className={styles.form}>
+          <form onSubmit={() => editAmount(state)} className={styles.form}>
             <h4> CHANGE AMOUNT :</h4>
-            <input type="number" />
+            <input
+              type="number"
+              value={inputAmount}
+              onChange={(e) => setInputAmount(e.target.value)}
+            />
             <button>Submit</button>
           </form>
         </div>
@@ -72,8 +107,8 @@ function EditModal() {
           Done
         </button>
       </motion.div>
-    </div>
-  );
-}
-
+     </div>
+     
+    );  
+};
 export default EditModal;
