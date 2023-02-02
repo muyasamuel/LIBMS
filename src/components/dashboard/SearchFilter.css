@@ -2,7 +2,9 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(34, 34, 34);
+    background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -10,12 +12,9 @@
     
 }
 
-.wrapper{
-    
+.wrapper{ 
     margin-top: 50px;
     position: relative;
-   
- 
 }
 
 .subWrapper{
