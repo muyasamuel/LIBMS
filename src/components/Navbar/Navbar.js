@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import './Navbar.css'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
  const navigate = useNavigate();
@@ -9,25 +9,23 @@ function Navbar() {
          localStorage.removeItem('user'); 
           return navigate("/login");
     }
-
+    
 
   return (
     <div className='header'>
       <ul>
+        
         <li>
-          <Link to="/contents">Home</Link>
+          <NavLink to="/contents/addbook">AddBook</NavLink>
         </li>
         <li>
-          <Link to="/contents/addbook">AddBook</Link>
+          <NavLink to="/contents/edit">SearchFilter</NavLink>
         </li>
         <li>
-          <Link to="/contents/edit">SearchFilter</Link>
+          <NavLink to="/contents/issuebook">IssueBook</NavLink>
         </li>
         <li>
-          <Link to="/contents/issuebook">IssueBook</Link>
-        </li>
-        <li>
-          <Link to="/contents/issuedbooks">IssuedBooks</Link>
+          <NavLink to="/contents/issuedbooks">IssuedBooks</NavLink>
         </li>
       </ul>
 

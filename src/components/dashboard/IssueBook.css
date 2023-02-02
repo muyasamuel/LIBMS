@@ -1,6 +1,8 @@
 .issueContainer{
     height: 100vh;
-    background: linear-gradient(to bottom, #e6ae35, #755510); 
+    background:  linear-gradient(rgba(12, 11, 11, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-position: center;
+    background-size: cover;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -8,6 +10,7 @@
 }
 .issueContainer h1,h3{
     text-align: center;
+    color: #fff;
 }
 
 .issueWrapper{

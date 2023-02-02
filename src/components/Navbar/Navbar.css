@@ -23,15 +23,22 @@
     
 }
 
+.header ul li a:active{
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+    
+}
+
 .header ul li :link{
     text-decoration: none;
     color: black;
     
 }
-.header ul li :link:hover{
+/* .header ul li :link:hover{
     text-decoration: underline;
      
-}
+} */
 
 .logOutBtn{
     background: transparent;
