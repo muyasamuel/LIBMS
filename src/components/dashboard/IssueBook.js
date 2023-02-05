@@ -28,13 +28,16 @@ function IssueBook() {
     });
   };
 
-  const formatIssueDate = moment().utc(issueDate).format();
+
+   const m = moment().toISOString();
+  
+  const formatIssueDate = moment(issueDate).toISOString();
   const formatReturnDate = moment().utc(returnDate).format();
 
 
   useEffect(()=> {
-     console.log("issueDate" , formatReturnDate)
-  },[formatReturnDate])
+     console.log("issueDate" , currentDate)
+  },[currentDate])
 
 
 
@@ -48,6 +51,7 @@ function IssueBook() {
 
     let updatedState = { ...formState };
     const { student_name, student_email, title } = updatedState;
+
 
     const issueData = {
       student_name: student_name.value,
