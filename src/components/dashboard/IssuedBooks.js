@@ -9,21 +9,38 @@ function IssuedBooks() {
  const [input , setInput] = useState('');
  const [ filteredResults, setFilteredResults] = useState([]);
  const [issuedBooks, setIssuedBooks] = useState([]);
- 
-useEffect(()=> {
-  fetchData();
-}, [])
+
+
+// const modifiedBookObject = (issuedBooks) => {
+    
+//   issuedBooks.map((book) => {
+//     const newReturnDate = book.issue_date.Slice(0,5)
+//     return {
+//       ...book,
+//       return_date: newReturnDate
+//     }
+//    });
+  
+// }
 
 
  const fetchData = async () => {
   await axios
     .get("http://localhost:8000/api/books/issue-book/")
     .then((res) => {
-     
       if (res.status === 200) {
         const books = res.data.books;
-        setIssuedBooks(books);
-      
+        const convertedBooks = books.map((book) => {
+        
+          return {
+                  ...book,
+                  issue_date: book.issue_date.slice(0,16).replace(/T/g, " T") +  " Hrs",
+                  return_date: book.return_date.slice(0,16).replace(/T/g, " T") +  " Hrs",
+                }
+        });
+        console.log(convertedBooks);
+        setIssuedBooks(convertedBooks);
+       
         
       }
     
@@ -32,6 +49,13 @@ useEffect(()=> {
       console.log("Error :" + err);
 });
 };
+
+ 
+useEffect(()=> {
+  fetchData();
+},[]);
+ 
+
 
 
 
