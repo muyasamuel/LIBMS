@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import axios from "axios";
+import { toast, Toaster } from "react-hot-toast";
 
 function IssueBook() {
   const defaultFormState = {
@@ -57,6 +58,8 @@ function IssueBook() {
         console.log(response);
         if (response.status === 201) {
           console.log("succcesfully");
+          toast.success('Successfully Issued Book');
+
         }
       })
       .catch((err) => {
@@ -105,6 +108,7 @@ function IssueBook() {
 
   return (
     <div className="issueContainer">
+      <Toaster />
       <div>
         <h1>Issue Book</h1>
         <h3>Note: Only one book is issued at a GO !!!</h3>
