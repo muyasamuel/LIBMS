@@ -14,8 +14,7 @@ function IssueBook() {
     title: { value: "", error: null },
   };
 
-
-
+  
   const [formState, setFormState] = useState(defaultFormState);
   const [issueDate, setIssueDate] = useState();
   const [returnDate, setReturnDate] = useState();
@@ -30,8 +29,6 @@ function IssueBook() {
     });
   };
 
-
-  
   const formatIssueDate = moment(issueDate).toISOString();
   const formatReturnDate = moment(returnDate).toISOString();
 
@@ -110,7 +107,6 @@ function IssueBook() {
     });
     return error;
   };
-
 
 
   return (
