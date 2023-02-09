@@ -14,7 +14,9 @@ function Navbar() {
   return (
     <div className='header'>
       <ul>
-        
+        <li>
+          <NavLink to="/contents">Home</NavLink>
+        </li>
         <li>
           <NavLink to="/contents/addbook">AddBook</NavLink>
         </li>

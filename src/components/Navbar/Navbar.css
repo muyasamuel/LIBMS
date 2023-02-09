@@ -35,10 +35,10 @@
     color: black;
     
 }
-/* .header ul li :link:hover{
+.header ul li :link:hover{
     text-decoration: underline;
      
-} */
+}
 
 .logOutBtn{
     background: transparent;
