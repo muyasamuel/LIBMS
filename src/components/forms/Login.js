@@ -35,6 +35,8 @@ const defaulState = {
 
 
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 
  const handleSubmit =  (e) => {
     e.preventDefault();
@@ -53,7 +55,7 @@ const defaulState = {
  
   axios({
       method: 'post',
-      url: "http://127.0.0.1:8000/api/user/login/",
+      url: `${baseUrl}/api/user/login/`,
       data: user
   })
   .then( (response) =>  {

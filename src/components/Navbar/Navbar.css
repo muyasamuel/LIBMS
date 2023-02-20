@@ -1,60 +1,72 @@
-.header{
-    height: 50px;
-    width: 100%;
-    background-color: var(--mainColor);
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 20;
+.header {
+  height: 50px;
+  width: 100%;
+  background-color: var(--mainColor);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
 }
 .header ul {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .header ul li {
-    list-style: none;
-    font-size: 18px;
-    font-weight: 600;
-    
+  list-style: none;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.header ul li a:active{
-    color: #fff;
-    text-decoration: underline;
-    font-weight: bold;
-    
+.header ul li a:active {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-.header ul li :link{
-    text-decoration: none;
-    color: black;
-    
+.header ul li :link {
+  text-decoration: none;
+  color: black;
 }
-.header ul li :link:hover{
-    text-decoration: underline;
-     
+.header ul li :link:hover {
+  text-decoration: underline;
 }
 
-.logOutBtn{
-    background: transparent;
-    padding: 8px 16px;
-    color: #fff;
-    border: 1px solid white;
-    border-radius: 15px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: bold;
-    margin-right: 10px;
-    transition: ease-in .4s;
+.logOutBtn {
+  background: transparent;
+  padding: 8px 16px;
+  color: #fff;
+  border: 1px solid white;
+  border-radius: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: ease-in 0.4s;
 }
 
-.logOutBtn:hover{
-    background-color:var(--mainColor) ;
-    transform: scale(1.1);
+.logOutBtn:hover {
+  background-color: var(--mainColor);
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 650px) {
+  .header ul li {
+    font-size: 13px;
+  }
+
+  .logOutBtn {
+    padding: 4px 10px;
+
+    letter-spacing: 2px;
+  }
+  .header ul {
+
+    gap: 20px;
+  }
 }

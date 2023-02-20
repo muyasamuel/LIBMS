@@ -33,6 +33,9 @@ function IssueBook() {
   const formatReturnDate = moment(returnDate).toISOString();
 
 
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -56,7 +59,7 @@ function IssueBook() {
 
     axios({
       method: "post",
-      url: "http://localhost:8000/api/books/issue-book/",
+      url: `${baseUrl}/api/books/issue-book/`,
       data: issueData,
     })
       .then((response) => {
