@@ -15,6 +15,8 @@ import Navbar from '../Navbar/Navbar';
 
 function SearchFilter() {
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const { state } = useContext(EditContext);
 const { editCartSeen } = state;
 
@@ -23,14 +25,9 @@ const { editCartSeen } = state;
   const [filteredResults, setFilteredResults] = useState([]);
   const [booksAvailable, setBooksAvailable ] = useState([]);
 
-
-  useEffect(() => {
-        fetchData()
-  },[])
-
   const fetchData = async () => {
     await axios
-      .get("http://127.0.0.1:8000/api/books/book-list/")
+      .get(`${baseUrl}/api/books/book-list/`)
       .then((res) => {
         if (res.status === 200) {
           const books = res.data.books;
@@ -45,6 +42,16 @@ const { editCartSeen } = state;
   });
   };
 
+
+
+  useEffect(() => {
+        fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+  
+
+ 
  
 
 
@@ -66,7 +73,7 @@ const { editCartSeen } = state;
 
   const deleteBook =  (id, e) => {
     e.preventDefault();
-    axios.delete(`http://localhost:8000/api/books/delete-book/${id}`)
+    axios.delete(`${baseUrl}/api/books/delete-book/${id}`)
     .then(response => {
       if(response.status === 204){
         

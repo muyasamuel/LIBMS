@@ -11,22 +11,14 @@ function IssuedBooks() {
  const [issuedBooks, setIssuedBooks] = useState([]);
 
 
-// const modifiedBookObject = (issuedBooks) => {
-    
-//   issuedBooks.map((book) => {
-//     const newReturnDate = book.issue_date.Slice(0,5)
-//     return {
-//       ...book,
-//       return_date: newReturnDate
-//     }
-//    });
-  
-// }
 
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
+ // eslint-disable-next-line react-hooks/exhaustive-deps
  const fetchData = async () => {
   await axios
-    .get("http://localhost:8000/api/books/issue-book/")
+    .get(`${baseUrl}/api/books/issue-book/`)
     .then((res) => {
       if (res.status === 200) {
         const books = res.data.books;
@@ -53,6 +45,7 @@ function IssuedBooks() {
  
 useEffect(()=> {
   fetchData();
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[]);
  
 

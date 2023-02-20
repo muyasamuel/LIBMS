@@ -46,7 +46,9 @@ function SignUp() {
       password: password.value,
     };
 
-    fetch("http://127.0.0.1:8000/api/user/sign-up/", {
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+
+    fetch(`${baseUrl}/api/user/sign-up/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

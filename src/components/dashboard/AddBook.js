@@ -6,6 +6,8 @@ import Navbar from "../Navbar/Navbar";
 
 const AddBook = () => {
    const { register, handleSubmit , formState : { errors}, reset} = useForm();
+
+   const baseUrl = process.env.REACT_APP_BASE_URL;
    
 
 
@@ -14,7 +16,7 @@ const AddBook = () => {
 
     axios({
       method: 'post',
-      url: "http://127.0.0.1:8000/api/books/book-list/",
+      url: `${baseUrl}/api/books/book-list/`,
       data: data
   })
   .then( (response) =>  {
