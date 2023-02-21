@@ -31,7 +31,7 @@ const { editCartSeen } = state;
       .then((res) => {
         if (res.status === 200) {
           const books = res.data.books;
-          console.log(books);
+         
           setBooksAvailable(books);
           
         }

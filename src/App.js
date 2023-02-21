@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import './App.css';
 import Contents from './components/dashboard/Contents';
 import IssueBook from './components/dashboard/IssueBook';
 import SearchFilter from './components/dashboard/SearchFilter';
@@ -13,7 +12,7 @@ import SignUp from "./components/forms/SignUp";
 
 function App() {
   return ( 
-    <div className="App">
+    <div >
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp/>} />
