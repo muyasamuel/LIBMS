@@ -59,8 +59,6 @@ function SignUp() {
     });
 
     navigateToLogin();
-
-    console.log(data);
   };
 
   const handleFormValidations = () => {
@@ -115,79 +113,84 @@ function SignUp() {
     return error;
   };
 
+  
+
   return (
     <div className="container">
       <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <div className="form-element">
+            <label className="label"> Name</label>
+            <input
+              type="text"
+              className="input"
+              placeholder="Samuel"
+              value={formState?.name?.value}
+              onChange={(e) => onChangeHandler("name", e.target.value)}
+            />
+            {formState?.name?.error && (
+              <small className="error">{formState.name.error}</small>
+            )}
+          </div>
+          <div className="form-element">
+            <label className="label">Email Address</label>
+            <input
+              type="email"
+              className="input"
+              placeholder="contact@gmail.com"
+              value={formState?.emailAddress?.value}
+              onChange={(e) => onChangeHandler("emailAddress", e.target.value)}
+            />
+            {formState?.emailAddress?.error && (
+              <small className="error">{formState.emailAddress.error}</small>
+            )}
+          </div>
+          <div className="form-element">
+            <label className="label">Password</label>
+            <input
+              type="password"
+              className="input"
+              value={formState?.password?.value}
+              onChange={(e) => onChangeHandler("password", e.target.value)}
+            />
+            {formState?.password?.error && (
+              <small className="error">{formState.password.error}</small>
+            )}
+          </div>
+          <div className="form-element">
+            <label className="label">Confirm Password</label>
+            <input
+              type="password"
+              className="input"
+              value={formState?.confirmPassword?.value}
+              onChange={(e) =>
+                onChangeHandler("confirmPassword", e.target.value)
+              }
+            />
+            {formState?.confirmPassword?.error && (
+              <small className="error">{formState.confirmPassword.error}</small>
+            )}
+          </div>
 
-    
-      <form  onSubmit={handleSubmit}>
-        <div className="form-element">
-          <label className="label"> Name</label>
-          <input
-            type="text"
-            className="input"
-            placeholder="Samuel"
-            value={formState?.name?.value}
-            onChange={(e) => onChangeHandler("name", e.target.value)}
-          />
-          {formState?.name?.error && (
-            <small className="error">{formState.name.error}</small>
-          )}
-        </div>
-        <div className="form-element">
-          <label className="label">Email Address</label>
-          <input
-            type="email"
-            className="input"
-            placeholder="contact@gmail.com"
-            value={formState?.emailAddress?.value}
-            onChange={(e) => onChangeHandler("emailAddress", e.target.value)}
-          />
-          {formState?.emailAddress?.error && (
-            <small className="error">{formState.emailAddress.error}</small>
-          )}
-        </div>
-        <div className="form-element">
-          <label className="label">Password</label>
-          <input
-            type="password"
-            className="input"
-            value={formState?.password?.value}
-            onChange={(e) => onChangeHandler("password", e.target.value)}
-          />
-          {formState?.password?.error && (
-            <small className="error">{formState.password.error}</small>
-          )}
-        </div>
-        <div className="form-element">
-          <label className="label">Confirm Password</label>
-          <input
-            type="password"
-            className="input"
-            value={formState?.confirmPassword?.value}
-            onChange={(e) => onChangeHandler("confirmPassword", e.target.value)}
-          />
-          {formState?.confirmPassword?.error && (
-            <small className="error">{formState.confirmPassword.error}</small>
-          )}
-        </div>
+          <button type="submit" className="button">
+            Register
+          </button>
 
-        <button type="submit" className="button">
-          Register
-        </button>
+          <div>
+            <p>
+              Already have Account :{" "}
+              <span>
+                {" "}
+                <Link to="/login">Login</Link>
+              </span>
+            </p>
+          </div>
 
-        <div>
-          <p>Already have Account : <span> <Link to="/login" >Login</Link></span></p>
-        </div>
-        
-       
-
-        {success && (
-          <p className="success">Form as been submitted successfully!</p>
-        )}
-      </form>
-        
-        </div>
+          {success && (
+            <p className="success">Form as been submitted successfully!</p>
+          )}
+        </form>
+      </div>
     </div>
   );
 }

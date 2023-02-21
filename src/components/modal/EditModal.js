@@ -9,6 +9,10 @@ import toast, { Toaster } from "react-hot-toast";
 function EditModal() {
   const { state, dispatch } = useContext(EditContext);
   const [inputAmount, setInputAmount] = useState("");
+
+
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+
   
 
   const { title, author, category, amount } = state;
@@ -18,7 +22,7 @@ function EditModal() {
   const editAmount = async (state) => {
 
     await axios
-      .patch("http://localhost:8000/api/books/edit-book/", {
+      .patch(`${baseUrl}/api/books/edit-book/`, {
         id: state.id,
         title: state.title,
         author: state.author,

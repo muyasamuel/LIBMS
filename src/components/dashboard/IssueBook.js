@@ -14,7 +14,6 @@ function IssueBook() {
     title: { value: "", error: null },
   };
 
-  
   const [formState, setFormState] = useState(defaultFormState);
   const [issueDate, setIssueDate] = useState();
   const [returnDate, setReturnDate] = useState();
@@ -32,10 +31,7 @@ function IssueBook() {
   const formatIssueDate = moment(issueDate).toISOString();
   const formatReturnDate = moment(returnDate).toISOString();
 
-
   const baseUrl = process.env.REACT_APP_BASE_URL;
-
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -47,7 +43,6 @@ function IssueBook() {
 
     let updatedState = { ...formState };
     const { student_name, student_email, title } = updatedState;
-
 
     const issueData = {
       student_name: student_name.value,
@@ -63,21 +58,19 @@ function IssueBook() {
       data: issueData,
     })
       .then((response) => {
-        console.log(response);
         if (response.status === 201) {
           console.log("succcesfully");
-          toast.success('Successfully Added');
+          toast.success("Successfully Added");
         }
       })
       .catch((err) => {
         console.log(err.response);
       });
 
-      setFormState(defaultFormState);
-      setIssueDate(null);
-      setReturnDate(null);
+    setFormState(defaultFormState);
+    setIssueDate(null);
+    setReturnDate(null);
   };
-
 
   const handleFormValidations = () => {
     let updatedState = { ...formState };
@@ -111,94 +104,98 @@ function IssueBook() {
     return error;
   };
 
-
+  
   return (
     <>
-    <Navbar />
-    <div className="issueContainer">
-       <Toaster />
-      <div>
-        <h1>Issue Book</h1>
-        <h3>Note: Only one book is issued at a GO !!!</h3>
-        <div className="issueWrapper">
-          <form onSubmit={submitHandler}>
-            <div>
-              <label>
-                Students Name :
-                <input
-                  type="text"
-                  name="student_name"
-                  placeholder="Students Name"
-                  value={formState?.student_name?.value}
-                  onChange={(e) =>
-                    onChangeHandler("student_name", e.target.value)
-                  }
-                />
-              </label>
-              {formState?.student_name?.error && (
-                <small className="error">{formState.student_name.error}</small>
-              )}
-            </div>
-            <div>
-              <label>
-                Students Email :
-                <input
-                  type="email"
-                  name="student_email"
-                  placeholder="Students Email"
-                  value={formState?.student_email?.value}
-                  onChange={(e) =>
-                    onChangeHandler("student_email", e.target.value)
-                  }
-                />
-              </label>
-              {formState?.student_email?.error && (
-                <small className="error">{formState.student_email.error}</small>
-              )}
-            </div>
-            <div>
-              <label>
-                Book Title :
-                <input
-                  type="text"
-                  name="title"
-                  placeholder="Book Title"
-                  value={formState?.title?.value}
-                  onChange={(e) => onChangeHandler("title", e.target.value)}
-                />
-              </label>
-              {formState?.title?.error && (
-                <small className="error">{formState.title.error}</small>
-              )}
-            </div>
-            <div>
-              <label>
-                Issued Date :
-                <DatePicker
-                  showTimeSelect
-                  dateFormat=" yyyy MMMM d,  h:mmaa"
-                  selected={issueDate}
-                  onChange={(date) => setIssueDate(date)}
-                />
-              </label>
-            </div>
-            <div>
-              <label>
-                Return Date :
-                <DatePicker
-                  showTimeSelect
-                  dateFormat=" yyyy MMMM d,  h:mmaa"
-                  selected={returnDate}
-                  onChange={(date) => setReturnDate(date)}
-                />
-              </label>
-            </div>
+      <Navbar />
+      <div className="issueContainer">
+        <Toaster />
+        <div>
+          <h1>Issue Book</h1>
+          <h3>Note: Only one book is issued at a GO !!!</h3>
+          <div className="issueWrapper">
+            <form onSubmit={submitHandler}>
+              <div>
+                <label>
+                  Students Name :
+                  <input
+                    type="text"
+                    name="student_name"
+                    placeholder="Students Name"
+                    value={formState?.student_name?.value}
+                    onChange={(e) =>
+                      onChangeHandler("student_name", e.target.value)
+                    }
+                  />
+                </label>
+                {formState?.student_name?.error && (
+                  <small className="error">
+                    {formState.student_name.error}
+                  </small>
+                )}
+              </div>
+              <div>
+                <label>
+                  Students Email :
+                  <input
+                    type="email"
+                    name="student_email"
+                    placeholder="Students Email"
+                    value={formState?.student_email?.value}
+                    onChange={(e) =>
+                      onChangeHandler("student_email", e.target.value)
+                    }
+                  />
+                </label>
+                {formState?.student_email?.error && (
+                  <small className="error">
+                    {formState.student_email.error}
+                  </small>
+                )}
+              </div>
+              <div>
+                <label>
+                  Book Title :
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Book Title"
+                    value={formState?.title?.value}
+                    onChange={(e) => onChangeHandler("title", e.target.value)}
+                  />
+                </label>
+                {formState?.title?.error && (
+                  <small className="error">{formState.title.error}</small>
+                )}
+              </div>
+              <div>
+                <label>
+                  Issued Date :
+                  <DatePicker
+                    showTimeSelect
+                    dateFormat=" yyyy MMMM d,  h:mmaa"
+                    selected={issueDate}
+                    onChange={(date) => setIssueDate(date)}
+                  />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Return Date :
+                  <DatePicker
+                    showTimeSelect
+                    dateFormat=" yyyy MMMM d,  h:mmaa"
+                    selected={returnDate}
+                    onChange={(date) => setReturnDate(date)}
+                  />
+                </label>
+              </div>
 
-            <button className="issueWrapperBtn ">Submit </button>
-          </form>
+              <button className="issueWrapperBtn ">Submit </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
